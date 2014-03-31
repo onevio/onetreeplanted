@@ -1,0 +1,64 @@
+{% assign tag_count = collection.all_tags | size %}
+{% assign tag_threshold = 8 %}
+
+<div class="sixteen columns clearfix collection_nav">
+  <h1 class="collection_title {% if settings.collection_tags and tag_count < tag_threshold %}collection_title_tags{% endif %}"><a href="{% if collection.handle == "all" %}/collections/all{% else %}{{ collection.url }}{% endif %}" title="{{ collection.title | escape }}">{{ collection.title }}</a></h1>
+  {% if settings.collection_tags %}
+    {% if tag_count < tag_threshold %}
+      <ul class="collection_menu">
+        <li>
+          <a href="{% if collection.handle == "all" %}/collections/all{% else %}{{ collection.url }}{% endif %}">{% if current_tags %}View All{% else %}<span class="active">View All</span>{% endif %}</a>
+        </li>
+        {% for tag in collection.all_tags %}
+          {% unless tag contains 'meta-related-collection-' %}
+            <li>
+              {{ tag | highlight_active_tag | link_to_tag: tag }}
+            </li>
+          {% endunless %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endif %}
+
+  {% if settings.collection_tags %}
+    <select name="tag_filter" id="tag_filter" {% if tag_count >= tag_threshold %}style="display:block"{% endif %}>
+      <option {% unless current_tags %}selected="selected"{% endunless %} value="{% if collection.handle == "all" %}/collections/all{% else %}{{ collection.url }}{% endif %}">View All</option>
+      {% for tag in collection.all_tags %}
+        {% unless tag contains 'meta-related-collection-' %}
+          <option {% if current_tags contains tag %}selected="selected"{% endif %} value="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}">{{ tag }}</option>
+        {% endunless %}
+      {% endfor %}
+    </select>
+  {% endif %}
+</div>
+
+{% if collection.description != blank %}
+  <div class="sixteen columns">
+    <div class="section clearfix">    
+      {{ collection.description }}
+    </div>
+  </div>
+{% endif %}
+
+{% if settings.collection_sidebar %}
+  {% include 'collection-sidebar' %}
+  <div class="twelve columns">
+{% else %}
+  <div class="sixteen columns">
+{% endif %}
+
+{% paginate collection.products by settings.pagination_limit %}
+  {% if collection.products.size == 0 %}
+    <div class="center">
+      <div class="section clearfix">     
+        <p class="quote">No products found in this collection.</p>
+      </div>
+    </div>
+  {% else %}
+    {% assign products = collection.products %}
+    {% assign products_per_row = settings.products_per_row %}
+    {% include 'product-loop' with settings.collection_sidebar %}
+  {% endif %}
+  </div>
+  {% include 'pagination' %}
+{% endpaginate %}

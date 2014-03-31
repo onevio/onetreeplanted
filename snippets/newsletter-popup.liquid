@@ -1,0 +1,39 @@
+{% if settings.newsletter_popup %}   
+  <a id="newsletter" href="#target"></a>
+  <div style="display: none;">
+   <div id="target">
+    {% if settings.newsletter_popup_form %}
+      {% include 'newsletter' with 'center' %}
+    {% endif %}
+    </div>
+  </div>    
+
+  <script type="text/javascript">
+    function openNewsletterPopup() {
+      {% if settings.newsletter_popup_page != blank %}
+        $.get("/pages/{{ settings.newsletter_popup_page }}.json", function(data) {
+        $("#target").prepend("<h1>" + data["page"]["title"] + "</h1>" + data["page"]["body_html"]);
+        });
+      {% endif %}
+      setTimeout( function() {
+        $('#newsletter').fancybox({maxWidth: {% if settings.newsletter_popup_max_width != blank %}{{ settings.newsletter_popup_max_width }}{% else %}600{% endif %}});
+        $('#newsletter').trigger('click'); 
+      }, 
+      {% if settings.newsletter_popup_seconds != blank %}{{ settings.newsletter_popup_seconds }}{% else %}2{% endif %}*1000);
+    }
+
+    $(function() {
+      var popup = $.cookie('popup');
+      var cookie_enabled = {% if settings.newsletter_popup_days != blank and settings.newsletter_popup_days != "0" %}true{% else %}false{% endif %};
+
+      if (cookie_enabled && popup == 'open') {
+          return false;
+      } else {
+        openNewsletterPopup();
+      }
+      if (cookie_enabled) {
+        $.cookie('popup', 'open', { expires: {{ settings.newsletter_popup_days }} });
+      }
+    });
+  </script>
+{% endif %}

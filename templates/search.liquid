@@ -1,0 +1,128 @@
+{% assign search_pagination = settings.pagination_limit %}
+{% paginate search.results by search_pagination %}
+
+<div class="sixteen columns clearfix collection_nav">
+  <h1 class="collection_title {% if search.performed %}collection_title_tags{% endif %}">Search</h1>
+  {% if search.performed %}
+    <ul class="collection_menu">
+      <li>
+        {{ search.results_count }} {{ search.results_count | pluralize: 'result', 'results' }} for <strong>"{{search.terms | escape}}"</strong>
+      </li>
+    </ul>    
+  {% endif %}
+</div>
+
+{% if search.performed %}
+  
+  {% if search.results == empty %}    
+    <br class="clear" />
+    <br class="clear" />
+    <div class="clearfix">    
+      <p class="quote">Your search for <strong>"{{ search.terms | escape }}"</strong> did not match any results.</p>         
+    </div>
+
+    <br class="clear" />
+    <br class="clear" />
+    <br class="clear" />
+  {% else %}  
+
+
+ {% if settings.search_option == 'everything' %}
+    {% if settings.collection_sidebar %}
+      {% include 'collection-sidebar' %}
+      <div class="twelve columns">
+    {% else %}
+      <div class="sixteen columns">
+    {% endif %}
+
+
+    {% for item in search.results %}
+      <div class="product_row">
+        
+        {% if item.featured_image %}
+          <div class="four columns alpha">
+             <a href="{{ item.url }}" title="{{ item.title | escape }}">
+               <img src="{{ item.featured_image | product_img_url: 'large' }}"  alt="{{ item.title | escape }}" />
+             </a>
+          </div> 
+        {% endif %}
+        
+        {% if settings.collection_sidebar %}
+          <div class="{% if item.featured_image %}eight{% else %}twelve{% endif %} columns omega align_left">
+        {% else %}
+          <div class="{% if item.featured_image %}twelve{% else %}sixteen{% endif %} columns omega align_left">
+        {% endif %}        
+
+          <p>
+            <a href="{{item.url }}" title="{{ item.title | escape }}">{{ item.title }}</a>
+          </p> 
+
+          {% if item.price %}
+             <div class="info">                                              
+                <span class="price">
+                  {% if item.compare_at_price_max > item.price %}
+                    <span class="was_price">{{ item.compare_at_price_max | money }}</span>
+                  {% endif %}
+                    
+                  {% if item.available %}
+                    {% if item.price_varies %}
+                      {% if item.compare_at_price_max > item.price %}
+                        <br />
+                      {% endif %}
+                      <small><em>from</em></small>
+                    {% endif %}
+                    {{ item.price_min | money }}
+                  {% else %}
+                    {{ item.price_min | money }} - Sold Out
+                  {% endif %}
+                </span>
+            </div>
+          {% endif %}
+          
+          <p>
+            {{ item.content | strip_html | truncatewords: 40 | highlight: search.terms | replace: 'Description', '' | replace: 'Specs', '' | replace: 'Shipping', '' }}
+          </p>         
+        </div>
+      </div>  
+    <hr />  
+   {% endfor %}  
+  </div>
+
+ {% else %}
+      {% if settings.collection_sidebar %}
+        {% include 'collection-sidebar' %}
+        <div class="twelve columns">
+      {% else %}
+        <div class="sixteen columns">
+      {% endif %}
+
+      {% assign products = search.results %}
+      {% assign products_per_row = settings.products_per_row %}
+      {% include 'product-loop' with settings.collection_sidebar %}
+
+      </div>
+
+    {% endif %}
+  {% endif %}
+
+  {% include 'pagination' %}    
+
+{% else %}
+  <div class="clearfix search_page">  
+    <br class="clear" />
+    <br class="clear" />   
+      <form class="search" action="/search">
+        <div class="four offset-by-five columns center">
+          {% if settings.search_option != 'everything' %}
+            <input type="hidden" name="type" value="product" />
+          {% endif %}
+          <input type="text" name="q" placeholder="Search {{ shop.name }}..." value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
+      </div>
+      <div class="two columns">
+        <input type="submit" name="submit" class="action_button" value="Search" style="margin-top:0" />
+      </div>
+      </form>
+    </div>
+  </div>
+{% endif %}
+{% endpaginate %}

@@ -1,0 +1,291 @@
+{% if settings.slideshow_enabled %}
+  {% if settings.slideshow_width_narrow %}
+    <div class="container main content"> 
+      <div class="sixteen columns clearfix">
+  {% else %}
+    </div>
+  {% endif %}
+  
+  {% capture video_slide %}
+    {% if settings.video_embed != blank %}
+      {% if settings.video_width == 'set' %}
+        <li>
+          <div class="video-wrapper" style="width: {{ settings.video_width_px }}px; margin: 0 auto;">
+            <div class="video-container">
+              {{ settings.video_embed }}
+            </div>
+          </div>
+        </li>
+      {% else %}
+        <li>
+          <div class="video-container">
+            {{ settings.video_embed }}
+          </div>
+        </li>
+      {% endif %}
+    {% endif %}
+  {% endcapture %}
+
+  <div id="homepage_slider" class="flexslider">
+    <ul class="slides">
+      {% if settings.video_position == '1' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_1_enabled %}
+	    	<li>
+	    		<a href="{{ settings.image_1_link }}"><img src="{{ 'slideshow_1.jpg' | asset_url }}" alt="{{ settings.image_1_alt_text | escape }}" /></a>
+	    		{% if settings.image_1_headline != blank or settings.image_1_subtitle != blank or settings.image_1_button_text != blank %}
+	    		  <div class="flex-caption">
+              <div class="container">
+                <div class="columns {% if settings.image_1_text_align == 'left' %} align_left seven {% elsif settings.image_1_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <h1 class="headline" style="color:{{settings.image_1_text_color}}">{{ settings.image_1_headline }}</h1>
+                  <p class="subtitle" style="color:{{settings.image_1_text_color}}">{{ settings.image_1_subtitle }}</p>
+                  {% if settings.image_1_button_text != blank %}
+                    <a href="{{ settings.image_1_link }}" class="action_button_large">
+                      {{ settings.image_1_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+	    		{% endif %}
+	    	</li>
+	    {% endif %}
+      {% if settings.video_position == '2' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_2_enabled %}
+      	<li>
+      		<a href="{{ settings.image_2_link }}"><img src="{{ 'slideshow_2.jpg' | asset_url }}" alt="{{ settings.image_2_alt_text | escape }}" /></a>
+          {% if settings.image_2_headline != blank or settings.image_2_subtitle != blank or settings.image_2_button_text != blank %}
+            <div class="flex-caption">
+              <div class="container">
+                <div class="columns {% if settings.image_2_text_align == 'left' %} align_left seven {% elsif settings.image_2_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_2_text_color}}">{{ settings.image_2_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_2_text_color}}">{{ settings.image_2_subtitle }}</p>
+                  {% if settings.image_2_button_text != blank %}
+                    <a href="{{ settings.image_2_link }}" class="action_button_large">
+                      {{ settings.image_2_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+      {% if settings.video_position == '3' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_3_enabled %}
+      	<li>
+      		<a href="{{ settings.image_3_link }}"><img src="{{ 'slideshow_3.jpg' | asset_url }}" alt="{{ settings.image_3_alt_text | escape }}" /></a>
+          {% if settings.image_3_headline != blank or settings.image_3_subtitle != blank or settings.image_3_button_text != blank %}
+            <div class="flex-caption">
+              <div class="container">
+                <div class="columns {% if settings.image_3_text_align == 'left' %} align_left seven {% elsif settings.image_3_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_3_text_color}}">{{ settings.image_3_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_3_text_color}}">{{ settings.image_3_subtitle }}</p>
+                  {% if settings.image_3_button_text != blank %}
+                    <a href="{{ settings.image_3_link }}" class="action_button_large">
+                      {{ settings.image_3_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+      {% if settings.video_position == '4' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_4_enabled %}
+      	<li>
+      		<a href="{{ settings.image_4_link }}"><img src="{{ 'slideshow_4.jpg' | asset_url }}" alt="{{ settings.image_4_alt_text | escape }}" /></a>
+          {% if settings.image_4_headline != blank or settings.image_4_subtitle != blank or settings.image_4_button_text != blank %}
+            <div class="flex-caption">
+              <div class="container">
+                <div class="columns {% if settings.image_4_text_align == 'left' %} align_left seven {% elsif settings.image_4_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_4_text_color}}">{{ settings.image_4_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_4_text_color}}">{{ settings.image_4_subtitle }}</p>
+                  {% if settings.image_4_button_text != blank %}
+                    <a href="{{ settings.image_4_link }}" class="action_button_large">
+                      {{ settings.image_4_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+      {% if settings.video_position == '5' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_5_enabled %}
+      	<li>
+      		<a href="{{ settings.image_5_link }}"><img src="{{ 'slideshow_5.jpg' | asset_url }}" alt="{{ settings.image_5_alt_text | escape }}" /></a>
+          {% if settings.image_5_headline != blank or settings.image_5_subtitle != blank or settings.image_5_button_text != blank %}
+            <div class="flex-caption">
+              <div class="container">
+                <div class="columns {% if settings.image_5_text_align == 'left' %} align_left seven {% elsif settings.image_5_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_5_text_color}}">{{ settings.image_5_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_5_text_color}}">{{ settings.image_5_subtitle }}</p>
+                  {% if settings.image_5_button_text != blank %}
+                    <a href="{{ settings.image_5_link }}" class="action_button_large">
+                      {{ settings.image_5_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+      {% if settings.video_position == '6' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_6_enabled %}
+      	<li>
+      		<a href="{{ settings.image_6_link }}"><img src="{{ 'slideshow_6.jpg' | asset_url }}" alt="{{ settings.image_6_alt_text | escape }}" /></a>
+          {% if settings.image_6_headline != blank or settings.image_6_subtitle != blank or settings.image_6_button_text != blank %}
+            <div class="flex-caption">
+              <div class="container">
+                <div class="columns {% if settings.image_6_text_align == 'left' %} align_left seven {% elsif settings.image_6_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_6_text_color}}">{{ settings.image_6_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_6_text_color}}">{{ settings.image_6_subtitle }}</p>
+                  {% if settings.image_6_button_text != blank %}
+                    <a href="{{ settings.image_6_link }}" class="action_button_large">
+                      {{ settings.image_6_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+    </ul>
+	</div>
+      
+      
+      
+       <div class="newsletterBar">
+        <div class="container" style="padding: 10px 0;">
+          <div class="twelve columns offset-by-two">
+            <strong><p style="color: #ffffff; line-height: 1; margin-top: 10px; margin-right: 10px; float:left;">SIGN UP FOR EMAILS - We'd love to have you!</p></strong>
+            <form style="float: left;" action="http://onetreeplanted.us3.list-manage.com/subscribe/post?u=2bdf2068a8788b50845a4ff41&amp;id=ace71020da" method="post" name="mc-embedded-subscribe-form" class="contact-form" target="_blank" align="right">
+      				<input type="email" value="" name="EMAIL" class="contact_email" placeholder="Enter your email address...">
+      				<input type="submit" value="Sign Up" class="newsletter_button sign_up" name="subscribe" style="padding: 8px 13px;">
+    			</form>
+			</div>
+      	</div>
+    </div>
+
+
+      
+      
+{% endif %}
+
+
+{% if settings.homepage != blank %}
+  </div>  
+  <div class="homepage_content clearfix">
+    <div class="container">
+      <div class="sixteen columns">
+      	<div class="section">
+          {{ pages[settings.homepage].content }}
+      	</div>
+      </div>
+    </div>
+  </div>
+<div class="container content" style="padding-top: 20px">
+{% endif %}
+    
+    
+    <br class="clear" />
+    
+    
+    
+    {% if settings.frontpage_linklist != blank %}
+  {% assign linklist = linklists[settings.frontpage_linklist] %}
+  {% assign collections_per_row = settings.frontpage_collections_per_row %}
+  {% include 'collection-loop' %}
+{% endif %}
+
+{% if settings.frontpage_collection != blank %}
+  {% assign collection = '' %}
+  {% assign products = collections[settings.frontpage_collection].products %}
+  {% assign products_per_row = settings.frontpage_products_per_row %}
+  
+  <div class="sixteen columns">
+    <h2>{{ collections[settings.frontpage_collection].title }}</h2>
+  </div>
+  <div class="sixteen columns">
+    {% include 'product-loop' %}
+  </div>
+{% endif %}
+
+{% if settings.frontpage_collection2 != blank %}
+  {% assign collection = '' %}
+  {% assign products = collections[settings.frontpage_collection2].products %}
+  {% assign products_per_row = settings.frontpage_products_per_row %}
+  
+  <div class="sixteen columns">
+    <h2>{{ collections[settings.frontpage_collection2].title }}</h2>
+  </div>
+  <div class="sixteen columns">
+    {% include 'product-loop' %}
+  </div>
+{% endif %}
+    
+    
+<br class="clear" />
+    
+    
+
+{% if settings.blog_widget %}
+  <div class="{% if settings.twitter_widget != blank %}ten{% else %}sixteen{% endif %} columns">
+    <h4 class="title">
+      <a href="{{ blogs[settings.blog_widget_select].url }}">{{ blogs[settings.blog_widget_select].title }}</a>
+    </h4>
+
+    {% for article in blogs[settings.blog_widget_select].articles limit: settings.home_page_articles %}
+      <div class="section clearfix article">
+        <h5 class="sub_title">
+          <a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a>
+        </h5>
+        <p class="meta"><span class="label">{{ article.published_at | date: "%B %d, %Y" }}</span></p>
+          
+        {% if article.excerpt != blank %}
+          {{ article.excerpt }}
+        {% else %}
+          <p>
+            {{ article.content | strip_html | truncatewords: 120 }}
+          </p>
+        {% endif %}        
+
+        <p class="continue_reading">
+          <a href="{{ article.url }}" title="{{ article.title | escape }}" class="action_button">Continue Reading &gt;</a>
+        </p>
+      </div>
+    {% endfor %}
+    </div>
+{% endif %}
+
+{% if settings.twitter_widget != blank %}
+  <div class="{% if settings.blog_widget %}five offset-by-one{% else %}sixteen{% endif %} columns">
+      <h4 class="title"><a href="https://twitter.com/{{ settings.twitter_username }}" target="_blank">Tweets</a></h4>
+      <a class="twitter-timeline" href="https://twitter.com/{{ settings.twitter_username }}" data-widget-id="319998048782647298" data-screen-name="{{ settings.twitter_username }}" data-chrome="noheader nofooter noborders transparent" data-link-color="{{ settings.link_color }}" data-heading-style="color:{{ settings.link_color }};font-size:{{ settings.regular_font_size }}px;{% if settings.regular_typeface_method == "google_webfonts" %}font-family: {{ settings.regular_google_webfont_font | replace: '+', ' ' }};{% else %}font-family: {{ settings.regular_websafe_font | replace: '+', ' ' }};{% endif %}"></a>
+      <script defer>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+{% endif %}
+
+{% if settings.instagram_widget %}
+  <div class="section clearfix article">
+    <div class="sixteen columns">
+      <h4 class="title">
+        {% if settings.instagram_link != blank %}
+          <a href="{{ settings.instagram_link }}" target="_blank">
+        {% endif %}
+        {{ settings.instagram_title }}
+        {% if settings.instagram_link != blank %}
+          </a>
+        {% endif %}
+      </h4>
+    </div>
+    
+    <div id="instafeed" data-tag-name="{{ settings.instagram_tag_name }}" data-client-id="{{ settings.instagram_client_id }}" data-count="{{ settings.instagram_count }}">
+      <em>Tag your Instagram photos with #{{ settings.instagram_tag_name }}</em>
+    </div>
+  </div>
+{% endif %}

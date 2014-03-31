@@ -1,0 +1,29 @@
+{% capture current_url %}{% if social-buttons == 'article' %}{{ shop.url }}{{ article.url }}{% else %}{{ canonical_url }}{% endif %}{% endcapture %}  
+
+{% capture buttons %}
+  <span class="plusonecont"><g:plusone size="medium" annotation="none"></g:plusone></span>
+  <span class="twittercont"><a href="//twitter.com/share" class="twitter-share-button" data-url="{{ current_url }}" {% if social-buttons == 'article' %}data-text="{{ article.title | escape }}"{% endif %} data-count="none">Tweet</a></span>
+
+  {% if social-buttons == 'product' and settings.display_pinterest_button == true %}
+    <a target="_blank" class="pinterestcount" href="http://pinterest.com/pin/create/button/?url={{ current_url }}&amp;media={{ product.featured_image | product_img_url: 'grande'  | replace: '//cdn', 'http://cdn' | replace: 'http:http://', 'http://' | remove: 'https:' }}">Pin It</a>
+  {% endif %}
+  
+  {% if social-buttons == 'product' and settings.display_fancy_button == true %}
+    <a target="_blank" class="fancybutton" href="http://www.thefancy.com/fancyit?ItemURL={{ current_url }}&Title={{ product.title | escape }}&Category=Other&ImageURL={{ product.featured_image | product_img_url: 'grande'  | replace: '//cdn', 'http://cdn' | replace: 'http:http://', 'http://' | remove: 'https:' }}">Fancy</a>
+  {% endif %}
+  
+  <span class="facebookcont fb-like" data-href="{% if settings.facebook_link != '' and social-buttons == 'global' %}{{ settings.facebook_link }}{% else %}{{ current_url }}{% endif %}" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-share="true"></span>
+{% endcapture %}
+
+{% if social-buttons == 'article' and settings.display_social_buttons_blog  %}
+  <div class="social_buttons">
+    {{ buttons }}
+  </div>
+{% elsif social-buttons == 'global' and settings.header_share_button %}  
+  <div class="social_buttons right">
+    {{ buttons }}
+  </div>
+{% elsif social-buttons == 'product' and settings.display_social_buttons %}
+  <hr />
+  {{ buttons }}
+{% endif %}

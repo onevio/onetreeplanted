@@ -1,0 +1,167 @@
+  <div class="sixteen columns clearfix collection_nav">
+    <h1 class="collection_title">Cart</h1>
+  </div>
+
+  <div class="sixteen columns">
+    <div class="clearfix breadcrumb">
+      {% if cart.item_count != 0 %}
+        <a href="{% if cart.items.first.product.collections != blank %}{{ cart.items.first.product.collections.last.url }}{% else %}/collections/all{% endif %}">&lt; Continue Shopping</a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if cart.item_count == 0 %}
+    <div class="sixteen columns">
+      <div class="section clearfix">
+        <p class="quote">There are no items in your cart. <a href="/collections/all">Continue Shopping &rarr;</a></p>    
+        <br class="clear" />
+        <br class="clear" />
+      </div>
+    </div>
+  {% else %}
+
+    <div class="sixteen columns">
+      <form action="/cart" method="post" id="cart_form">
+        <div class="checkout_table_header">    
+          <div class="eight columns alpha">      
+            <h4>Item</h4>
+          </div>
+              
+          <div class="three columns">
+            <h4>Price</h4>
+          </div>    
+        
+          <div class="two columns">
+            <h4>Qty</h4>
+          </div>
+        
+          <div class="three columns omega">
+            <h4>Total</h4>
+          </div>
+        
+          <div class="clear"></div>
+        </div>
+        
+        <ul class="none">
+        {% for item in cart.items %}
+          <li>
+          <div class="eight columns title_column alpha">
+             <a class="cart_image" href="{{ item.product.url }}" title="{{ item.product.title | escape }}">
+               {% assign found = false %}
+               {% for img in item.product.images %}
+                 {% if found == false and item.variant.title contains img.alt %}
+                   <img src="{{ img | product_img_url: 'small' }}"  alt="{{ item.product.title | escape }}" />
+                   {% assign found = true %}
+                  {% endif %}
+               {% endfor %}
+               {% if found == false %}
+                 <img src="{{ item.product.featured_image | product_img_url: 'small' }}"  alt="{{ item.product.title | escape }}" />
+               {% endif %}           
+             </a>
+
+            <p class="cart_price">
+              {{ item.price | money }}
+              <span class="price_total_text">
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" title="Remove Item">Remove</a>
+              </span>
+            </p>
+            <p>
+              <a href="{{item.product.url }}" title="{{ item.title | escape }}">{{ item.title }}</a>
+            </p> 
+            
+            {% if item.properties %}
+              <p>
+              {% for p in item.properties %}
+                {% unless p.last == blank %}
+                  {% if p.last contains '/uploads/' %}
+                    {{ p.first }}: <a class="lightbox" href="{{ p.last }}">uploaded file</a><br />
+                  {% else %}
+                    {{ p.first }}: {{ p.last }}<br />
+                  {% endif %}
+                {% endunless %}
+              {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        
+          <div class="three columns">
+            <p class="price_total">
+              {{ item.price | money }}
+            </p>
+          </div>
+
+          <div class="two columns mobile_right" id="quantity_{{ forloop.index }}">
+            <span class="quantity_label">Quantity:</span>
+            <input type="number" min="0" size="2" class="quantity" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" />
+          </div>
+          
+          <div class="three columns mobile_right omega">
+            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" title="Remove Item" class="right mobile_hidden remove"><span class="icon-cancel"></span></a>
+
+            <span class="price_total">{{ item.line_price | money }}</span>
+          </div>
+              
+          <div class="sixteen columns clearfix alpha omega">
+            <hr />
+          </div>
+        </li>
+        {% endfor %}
+        </ul>
+        <div class="thirteen columns align_right alpha">
+          <h4 class="subtotal">
+            Subtotal
+          </h4>
+        </div>
+
+        <div class="three columns omega">
+          <p class="subtotal_amount">
+            <strong>{{ cart.total_price | money_with_currency }}</strong> 
+            <small id="estimated-shipping" style="display:none">+ <em>{{ 0 | money }}</em> estimated shipping </small>
+
+            {% unless settings.tax_included %}
+              <small class="excluding_tax"><em>Excluding tax &amp; shipping</em></small>
+            {% endunless %}
+
+            {% if settings.show_multiple_currencies %}
+                <small>
+                  <em>Orders will be processed<br /> in {{ shop.currency }}.</em>
+                </small>
+            {% endif %}
+          </p>
+
+        </div>
+
+        {% if settings.display_special_instructions %} 
+          <div class="four columns mobile_left alpha">
+            <label for="note">Special Instructions:</label>
+          </div>
+        
+          <div class="six columns">
+            <textarea id="note" name="note" rows="2">{{ cart.note }}</textarea>        
+          </div>  
+        {% endif %}
+        
+        <div class="three columns update_subtotal_text align_right {% unless settings.display_special_instructions %}offset-by-ten alpha{% endunless %}">
+          <p>
+            <a href="#" class="update_subtotal">Update Subtotal</a>
+          </p>
+        </div>
+
+        <div class="three columns omega">
+          <p>
+            <input type="submit" class="action_button" id="checkout" name="checkout" value="Checkout" />
+          </p>
+          
+          {% if additional_checkout_buttons %}
+            <p class="center">
+              {{ content_for_additional_checkout_buttons | google_button_options: 'transparent' }}
+            </p>
+          {% endif %}
+
+        </div>
+      </form>
+    </div>
+    
+    {% include 'cart-shipping-calculator' %}
+
+  {% endif %}

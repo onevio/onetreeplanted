@@ -1,0 +1,1864 @@
+<div class="section-info">
+    <h3>Mobilia v3.2</h3>
+    <h4>Documentation: <a href="http://support.outofthesandbox.com" >http://support.outofthesandbox.com</a></h4> 
+    <h5>FAQ: <a href="http://support.outofthesandbox.com/customer/portal/articles/942350-creating-a-dropdown-menu" >Drop down menu</a> &#8226; <a href="http://support.outofthesandbox.com/customer/portal/articles/942377">Home Page Collections</a> &#8226; <a href="http://support.outofthesandbox.com/customer/portal/articles/942364-adding-tabs" >Adding Tabs</a> &#8226; <a href="http://support.outofthesandbox.com/customer/portal/articles/942376" >Product Variant Images</a> &#8226; <a href="http://support.outofthesandbox.com/customer/portal/articles/942366-products-on-sale" >Sale Banners</a> &#8226; <a href="http://support.outofthesandbox.com/customer/portal/articles/942378-related-products" >Related Products</a></h5>
+    <p>If you need any assistance, please contact <a href="mailto:info@outofthesandbox.com">info@outofthesandbox.com</a></p>
+</div><br />
+<div class="container"></div><fieldset>
+  <legend>Header</legend>
+  <table>
+    <tr>
+      <th><label for="use_logo">Use a custom logo?</label></th>
+      <td>
+        <input type="checkbox" id="use_logo" name="use_logo" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="logo">Shop Logo (maximum 600x300)</label></th>
+      <td>
+        <input type="file" id="logo" name="logo.png" data-max-width="600" data-max-height="300" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="favicon">Favicon (32x32)</label></th>
+      <td>
+        <input type="file" id="favicon" name="favicon.png" data-max-width="32" data-max-height="32" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_search_box">Display Search Box</label></th>
+      <td>
+        <input type="checkbox" id="display_search_box" name="display_search_box" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="search_option">Search Results</label></th>
+      <td>
+        <select name="search_option" id="search_option">
+          <option value="products" selected="selected">Products</option>
+          <option value="everything">Everything</option>
+        </select>
+      </td>
+    </tr>       
+    <tr>
+      <th><label for="header_social_icons">Display Social Icons?</label></th>
+      <td>
+        <input type="checkbox" id="header_social_icons" name="header_social_icons" value="1" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="cart_icon">Cart Icon</label></th>
+      <td>
+        <input type="radio" name="cart_icon" value="light" /> Light &nbsp; 
+        <input type="radio" name="cart_icon" value="dark" /> Dark
+      </td>
+    </tr>
+    <tr>
+      <th><label for="featured_content_page">Featured Content <br />(below navigation on all pages)</label></th>
+      <td><select class="page" name="featured_content_page" id="featured_content_page" /></td>
+    </tr>
+    <tr>
+      <th><label for="main_linklist">Main Menu Link List</label></th>
+      <td><select name="main_linklist" class="linklist" /></td>
+    </tr>
+    <tr>
+      <th><label for="top_bar_linklist">Top Menu Link List</label></th>
+      <td><select name="top_bar_linklist" class="linklist" /></td>
+    </tr>
+    <tr>
+      <th><label for="menu_top_padding">Menu Top Padding</label></th>
+      <td><input id="menu_top_padding" name="menu_top_padding" size="2" value="0" />px</td>
+    </tr>
+    <tr>
+      <th>&nbsp;</th>
+      <td><p>To display the "My Account" link, enable customer accounts from Preferences > Checkout and Payment.</p></td>
+    </tr>
+  </table>
+</fieldset>
+<fieldset>
+  <legend>Layout Colors and Backgrounds</legend>
+  <table>    <tr>
+      <th><label for="link_color">Link Color</label></th>
+      <td><input id="link_color" name="link_color" class="color" value="#333333" /></td>
+    </tr>
+    <tr>
+      <th><label for="link_hover_color">Link Hover Color</label></th>
+      <td><input id="link_hover_color" name="link_hover_color" class="color" value="#000000" /></td>
+    </tr>
+    <tr>
+      <th><label for="btn_color">Button Background Color</label></th>
+      <td><input id="btn_color" name="btn_color" class="color" value="#000000" /></td>
+    </tr>
+    <tr>
+      <th><label for="btn_hover_color">Button Background Hover Color</label></th>
+      <td><input id="btn_hover_color" name="btn_hover_color" class="color" value="#AE3333" /></td>
+    </tr>
+    <tr>
+      <th><label for="btn_text_color">Button Text Color</label></th>
+      <td><input id="btn_text_color" name="btn_text_color" class="color" value="#FFFFFF" /></td>
+    </tr>
+    <tr>
+      <th><label for="sale_color">Sale Price Color</label></th>
+      <td><input id="sale_color" name="sale_color" class="color" value="#AE3333" /></td>
+    </tr>
+    <tr>
+      <th><label for="sale_banner_color">Sale Banner Color</label></th>
+      <td><input id="sale_banner_color" name="sale_banner_color" class="color" value="#AE3333" /></td>
+    </tr>
+    <tr>
+      <th><label for="new_banner_color">New Banner Color</label></th>
+      <td><input id="new_banner_color" name="new_banner_color" class="color" value="#AE3333" /></td>
+    </tr>
+    <tr>
+      <th><label for="was_price_color">Was Price Color</label></th>
+      <td><input id="was_price_color" name="was_price_color" class="color" value="#AE3333" /></td>
+    </tr>
+    <tr>
+      <th><label for="border_color">Border Color</label></th>
+      <td><input id="border_color" name="border_color" class="color" value="#d3d3d3" /></td>
+    </tr>
+    <tr>
+      <th><label for="tab_background_color">Tab Background Color</label></th>
+      <td><input id="tab_background_color" name="tab_background_color" class="color" value="#f5f5f5" /></td>
+    </tr>
+    <tr>
+       <th><label for="table_styles_enabled">Use styled tables?</label></th>
+       <td>
+         <input type="checkbox" id="table_styles_enabled" name="table_styles_enabled" value="1" />
+       </td>
+     </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="shop_bg_color">Background Color</label></th>
+      <td><input id="shop_bg_color" name="shop_bg_color" class="color" /></td>
+    </tr>  
+    <tr>
+      <th><label for="modal_background_color">'Quick View' Background Color</label></th>
+      <td><input id="modal_background_color" name="modal_background_color" class="color" value="#FFFFFF" /></td>
+    </tr>
+    <tr>
+       <th><label for="shop_use_header_bg_color">Use Header Background Color?</label></th>
+       <td>
+         <input type="checkbox" id="shop_use_header_bg_color" name="shop_use_header_bg_color" value="1" />
+       </td>
+     </tr>
+        <tr>
+      <th><label for="header_bg_color">Header Background Color</label></th>
+      <td><input id="header_bg_color" name="header_bg_color" class="color" /></td>
+    </tr>  
+    <tr>
+       <th><label for="shop_use_content_bg_color">Use Content Background Color?</label></th>
+       <td>
+         <input type="checkbox" id="shop_use_content_bg_color" name="shop_use_content_bg_color" value="1" />
+       </td>
+     </tr>
+    <tr>
+      <th><label for="shop_content_bg_color">Content Background Color</label></th>
+      <td><input id="shop_content_bg_color" name="shop_content_bg_color" class="color" /></td>
+    </tr>
+    <tr>
+     <th><label for="shop_use_home_page_content_bg_color">Use Home Page Content Background Color?</label></th>
+     <td>
+       <input type="checkbox" id="shop_use_home_page_content_bg_color" name="shop_use_home_page_content_bg_color" value="1" />
+     </td>
+   </tr>
+   <tr>
+    <th><label for="shop_home_page_content_bg_color">Home Page Content Background Color</label></th>
+    <td><input id="shop_home_page_content_bg_color" name="shop_home_page_content_bg_color" class="color" /></td>
+   </tr>
+   <tr>
+    <th><label for="home_page_border_color">Home Page Content Border Color</label></th>
+    <td><input id="home_page_border_color" name="home_page_border_color" class="color" /></td>
+   </tr>
+    <tr>
+      <th><label for="use_custom_bg_image">Use a Background Image?</label></th>
+      <td>
+        <input type="checkbox" id="use_custom_bg_image" name="use_custom_bg_image" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="custom_bg_image">Upload Background Image</label></th>
+      <td>
+        <input type="file" id="custom_bg_image" name="custom_bg.png" data-max-width="2000" data-max-height="2000" />
+      </td>
+    </tr>
+    <tr>
+       <th><label for="repeat_bg">Repeat Background</label></th>
+       <td>
+         <select name="repeat_bg">
+           <option value="no-repeat">None</option>
+           <option value="repeat-x">Horizontally</option>
+           <option value="repeat-y">Vertically</option>
+           <option value="repeat" selected="selected">Both</option>
+         </select>
+       </td>
+     </tr>
+     <tr>
+       <th><label for="bg_fixed">Fix Background Position?</label></th>
+       <td><input type="checkbox" id="bg_fixed" name="bg_fixed" /></td>
+     </tr>
+     <tr>
+       <th><label for="bg_stretched">Stretch Background to fill screen?</label></th>
+       <td><input type="checkbox" id="bg_stretched" name="bg_stretched" /></td>
+     </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>   
+    <tr>
+      <th><label for="footer_link_color">Footer Link Color</label></th>
+      <td><input id="footer_link_color" name="footer_link_color" class="color" value="#AE3333" /></td>
+    </tr>
+    <tr>
+      <th><label for="footer_link_color_hover">Footer Link Hover Color</label></th>
+      <td><input id="footer_link_color_hover" name="footer_link_color_hover" class="color" value="#AE3333" /></td>
+    </tr>
+    <tr>
+      <th><label for="social_icons_color">Social Icons Color</label></th>
+      <td><input id="social_icons_color" name="social_icons_color" class="color" value="#AE3333" /></td>
+    </tr>
+    <tr>
+      <th><label for="social_icons_color_hover">Social Icons Hover Color</label></th>
+      <td><input id="social_icons_color_hover" name="social_icons_color_hover" class="color" value="#AE3333" /></td>
+    </tr>    
+    <tr>
+      <th><label for="footer_border_color">Footer Border Color</label></th>
+      <td><input id="footer_border_color" name="footer_border_color" class="color" /></td>
+    </tr>
+    <tr>
+      <th><label for="footer_color">Footer Background Color</label></th>
+      <td><input id="footer_color" name="footer_color" class="color" /></td>
+    </tr>
+    <tr>
+      <th><label for="use_custom_footer_image">Use a background image?</label></th>
+      <td>
+        <input type="checkbox" id="use_custom_footer_image" name="use_custom_footer_image" value="1" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="custom_footer_image">Background Image</label></th>
+      <td>
+        <input type="file" id="custom_footer_image" name="custom_footer.png" data-max-width="1800" data-max-height="1000" />
+      </td>
+    </tr>
+  </table>
+</fieldset>
+<fieldset>
+  <legend>Typography</legend>
+  <table>
+    <tr>
+      <th><label for="logo_typeface_method">Logo Typeface:</label></th>
+      <td>
+        <input type="radio" name="logo_typeface_method" value="google_webfonts" /> <a href="http://www.google.com/webfonts" >Google Web fonts</a><br />
+        <input type="radio" name="logo_typeface_method" value="websafe" /> Web Safe        
+      </td>
+    </tr>
+    
+    <tr>
+      <th><label for="logo_google_webfont_font">Google WebFont Typeface</label></th>
+      <td>
+        <select name="logo_google_webfont_font" id="logo_google_webfont_font">
+          <option value='Anton'>Anton</option>
+          <option value='Arvo'>Arvo</option>
+          <option value='Asap'>Asap</option>          
+          <option value='Bevan'>Bevan</option>
+          <option value='Cabin'>Cabin</option>
+          <option value='Copse'>Copse</option>
+          <option value='Corben'>Corben</option>
+          <option value='Dancing+Script'>Dancing Script</option>
+          <option value='Droid+Sans'>Droid Sans</option>
+          <option value='Droid+Serif'>Droid Serif</option>
+          <option value='Josefin+Slab'>Josefin Slab</option>
+          <option value='Josefin+Sans'>Josefin Sans</option>
+          <option value='Just+Another+Hand'>Just Another Hand</option>
+          <option value='Kreon'>Kreon</option>
+          <option value='Lato'>Lato</option>          
+          <option value='Lora'>Lora</option>          
+          <option value='Lobster'>Lobster</option>                                        
+          <option value='Merriweather'>Merriweather</option>
+          <option value='Molengo'>Molengo</option>
+          <option value='Montserrat'>Montserrat</option>
+          <option value='Neuton'>Neuton</option>
+          <option value='Open+Sans'>Open Sans</option>
+          <option value='Open+Sans+Condensed'>Open Sans Condensed</option>
+          <option value='Oswald'>Oswald</option>
+          <option value='Parisienne'>Parisienne</option>          
+          <option value='Permanent+Marker'>Permanent Marker</option>
+          <option value='Philosopher'>Philosopher</option>
+          <option value='PT+Sans+Narrow'>PT Sans Narrow</option>
+          <option value='Questrial'>Questrial</option>          
+          <option value='Rokkitt'>Rokkitt</option>                        
+          <option value='Vibur'>Vibur</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="logo_websafe_font">Web safe Typeface</label></th>
+      <td>
+        <select class="font" name="logo_websafe_font" id="logo_websafe_font">
+          <optgroup label="Sans-serif">
+            <option value="Futura, 'Century Gothic', AppleGothic, sans-serif">Futura</option>
+            <option value="'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica/Arial</option> 
+            <option value="'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica Neue Light</option> 
+            <option value="'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif">Lucida Grande</option> 
+            <option value="Trebuchet MS, sans-serif">Trebuchet MS</option> 
+            <option value="Verdana, Helvetica, Arial, sans-serif">Verdana</option>
+          </optgroup>
+          <optgroup label="Serif">
+            <option value="Garamond, Baskerville, Caslon, serif">Garamond</option> 
+            <option value="Georgia, Utopia, 'Times New Roman', Times, serif">Georgia</option> 
+            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+          </optgroup>
+          <optgroup label="Monospace">
+            <option value="Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace">Monaco</option>
+          </optgroup>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="logo_weight">Font Weight</label></th>
+      <td>
+        <select name="logo_weight" id="logo_weight">
+          <option value="lighter">Light</option>
+          <option value="normal" selected="selected">Regular</option>
+          <option value="bold">Bold</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="logo_font_style">Font Style</label></th>
+      <td>
+        <select name="logo_font_style" id="logo_font_style">
+          <option value="none" selected="selected">None</option>
+          <option value="uppercase">Uppercase</option>
+          <option value="lowercase">Lowercase</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="logo_font_size">Font Size</label></th>
+      <td>
+        <input id="logo_font_size" name="logo_font_size" size="2" value="" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="logo_color">Color</label></th>
+      <td>
+        <input id="logo_color" name="logo_color" class="color" value="" />
+      </td>
+    </tr>
+  </table>
+  <br />
+  <hr />
+  <br />
+  <table>
+    <tr>
+      <th><label for="headline_typeface_method">Headline Typeface:</label></th>
+      <td>
+        <input type="radio" name="headline_typeface_method" value="google_webfonts" /> <a href="http://www.google.com/webfonts" >Google Web fonts</a><br />
+        <input type="radio" name="headline_typeface_method" value="websafe" /> Web Safe        
+      </td>
+    </tr>
+    <tr>
+      <th><label for="headline_google_webfont_font">Google WebFont Typeface</label></th>
+      <td>
+        <select name="headline_google_webfont_font" id="headline_google_webfont_font">
+          <option value='Anton'>Anton</option>
+          <option value='Arvo'>Arvo</option>
+          <option value='Asap'>Asap</option>          
+          <option value='Bevan'>Bevan</option>
+          <option value='Cabin'>Cabin</option>
+          <option value='Copse'>Copse</option>
+          <option value='Corben'>Corben</option>
+          <option value='Dancing+Script'>Dancing Script</option>
+          <option value='Droid+Sans'>Droid Sans</option>
+          <option value='Droid+Serif'>Droid Serif</option>
+          <option value='Josefin+Slab'>Josefin Slab</option>
+          <option value='Josefin+Sans'>Josefin Sans</option>
+          <option value='Just+Another+Hand'>Just Another Hand</option>
+          <option value='Kreon'>Kreon</option>
+          <option value='Lato'>Lato</option>          
+          <option value='Lora'>Lora</option>          
+          <option value='Lobster'>Lobster</option>                                        
+          <option value='Merriweather'>Merriweather</option>
+          <option value='Molengo'>Molengo</option>   
+          <option value='Montserrat'>Montserrat</option>
+          <option value='Neuton'>Neuton</option>
+          <option value='Open+Sans'>Open Sans</option>
+          <option value='Open+Sans+Condensed'>Open Sans Condensed</option>
+          <option value='Oswald'>Oswald</option>
+          <option value='Parisienne'>Parisienne</option>          
+          <option value='Permanent+Marker'>Permanent Marker</option>
+          <option value='Philosopher'>Philosopher</option>
+          <option value='PT+Sans+Narrow'>PT Sans Narrow</option>
+          <option value='Questrial'>Questrial</option>          
+          <option value='Rokkitt'>Rokkitt</option>                          
+          <option value='Vibur'>Vibur</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="headline_websafe_font">Websafe Typeface</label></th>
+      <td>
+        <select class="font" name="headline_websafe_font" id="headline_websafe_font">
+          <optgroup label="Sans-serif">
+            <option value="Futura, 'Century Gothic', AppleGothic, sans-serif">Futura</option>
+            <option value="Helvetica, Arial, sans-serif">Helvetica/Arial</option> 
+            <option value="'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica Neue Light</option> 
+            <option value="'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif">Lucida Grande</option> 
+            <option value="Trebuchet MS, sans-serif">Trebuchet MS</option> 
+            <option value="Verdana, Helvetica, Arial, sans-serif">Verdana</option>
+          </optgroup>
+          <optgroup label="Serif">
+            <option value="Garamond, Baskerville, Caslon, serif">Garamond</option> 
+            <option value="Georgia, Utopia, 'Times New Roman', Times, serif">Georgia</option>  
+            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+          </optgroup>
+          <optgroup label="Monospace">
+            <option value="Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace">Monaco</option>
+          </optgroup>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="headline_weight">Font Weight</label></th>
+      <td>
+        <select name="headline_weight" id="headline_weight">
+          <option value="lighter">Light</option>
+          <option value="normal" selected="selected">Regular</option>
+          <option value="bold">Bold</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="headline_font_style">Font Style</label></th>
+      <td>
+        <select name="headline_font_style" id="headline_font_style">
+          <option value="none" selected="selected">None</option>
+          <option value="uppercase">Uppercase</option>
+          <option value="lowercase">Lowercase</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="headline_font_size">Font Size</label></th>
+      <td>
+        <input id="headline_font_size" name="headline_font_size" size="2" value="" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="headline_color">Color</label></th>
+      <td>
+        <input id="headline_color" name="headline_color" class="color" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="headline_footer_text_color">Footer Headline Color</label></th>
+      <td>
+        <input id="headline_footer_text_color" name="headline_footer_text_color" class="color" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="headline_letter_spacing">Letter Spacing</label></th>
+      <td>
+        <input id="headline_letter_spacing" name="headline_letter_spacing" value="" size="2" />px
+      </td>
+    </tr>
+  </table>
+  <br />
+  <hr />
+  <br />
+  
+  <table>
+    <tr>
+      <th><label for="nav_typeface_method">Main Menu Typeface:</label></th>
+      <td>
+        <input type="radio" name="nav_typeface_method" value="google_webfonts" /> <a href="http://www.google.com/webfonts" >Google Web fonts</a><br />
+        <input type="radio" name="nav_typeface_method" value="websafe" /> Web Safe        
+      </td>
+    </tr>
+    
+    <tr>
+      <th><label for="nav_google_webfont_font">Google WebFont Typeface</label></th>
+      <td>
+        <select name="nav_google_webfont_font" id="nav_google_webfont_font">
+          <option value='Anton'>Anton</option>
+          <option value='Arvo'>Arvo</option>
+          <option value='Asap'>Asap</option>          
+          <option value='Bevan'>Bevan</option>
+          <option value='Cabin'>Cabin</option>
+          <option value='Copse'>Copse</option>
+          <option value='Corben'>Corben</option>
+          <option value='Dancing+Script'>Dancing Script</option>
+          <option value='Droid+Sans'>Droid Sans</option>
+          <option value='Droid+Serif'>Droid Serif</option>
+          <option value='Josefin+Slab'>Josefin Slab</option>
+          <option value='Josefin+Sans'>Josefin Sans</option>
+          <option value='Just+Another+Hand'>Just Another Hand</option>
+          <option value='Kreon'>Kreon</option>
+          <option value='Lato'>Lato</option>          
+          <option value='Lora'>Lora</option>          
+          <option value='Lobster'>Lobster</option>                                        
+          <option value='Merriweather'>Merriweather</option>
+          <option value='Molengo'>Molengo</option>
+          <option value='Montserrat'>Montserrat</option>          
+          <option value='Neuton'>Neuton</option>
+          <option value='Open+Sans'>Open Sans</option>
+          <option value='Open+Sans+Condensed'>Open Sans Condensed</option>
+          <option value='Oswald'>Oswald</option>
+          <option value='Parisienne'>Parisienne</option>          
+          <option value='Permanent+Marker'>Permanent Marker</option>
+          <option value='Philosopher'>Philosopher</option>
+          <option value='PT+Sans+Narrow'>PT Sans Narrow</option>
+          <option value='Questrial'>Questrial</option>          
+          <option value='Rokkitt'>Rokkitt</option>          
+          <option value='Vibur'>Vibur</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="nav_websafe_font">Web safe Typeface</label></th>
+      <td>
+        <select class="font" name="nav_websafe_font" id="nav_websafe_font">
+          <optgroup label="Sans-serif">
+            <option value="Futura, 'Century Gothic', AppleGothic, sans-serif">Futura</option>
+            <option value="Helvetica, Arial, sans-serif">Helvetica/Arial</option> 
+            <option value="'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica Neue Light</option>             
+            <option value="'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif">Lucida Grande</option> 
+            <option value="Trebuchet MS, sans-serif">Trebuchet MS</option> 
+            <option value="Verdana, Helvetica, Arial, sans-serif">Verdana</option>
+          </optgroup>
+          <optgroup label="Serif">
+            <option value="Garamond, Baskerville, Caslon, serif">Garamond</option> 
+            <option value="Georgia, Utopia, 'Times New Roman', Times, serif">Georgia</option>  
+            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+          </optgroup>
+          <optgroup label="Monospace">
+            <option value="Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace">Monaco</option>
+          </optgroup>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="nav_weight">Font Weight</label></th>
+      <td>
+        <select name="nav_weight" id="regular_weight">
+          <option value="lighter">Light</option>
+          <option value="normal" selected="selected">Regular</option>
+          <option value="bold">Bold</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="nav_font_style">Font Style</label></th>
+      <td>
+        <select name="nav_font_style" id="nav_font_style">
+          <option value="none" selected="selected">None</option>
+          <option value="uppercase">Uppercase</option>
+          <option value="lowercase">Lowercase</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="nav_font_size">Font Size</label></th>
+      <td>
+        <input id="nav_font_size" name="nav_font_size" size="2" value="" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="nav_color">Color</label></th>
+      <td>
+        <input id="nav_color" name="nav_color" class="color" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="nav_color_active">Current Page Highlight Color</label></th>
+      <td>
+        <input id="nav_color_active" name="nav_color_active" class="color" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="nav_color_hover">Hover Color</label></th>
+      <td>
+        <input id="nav_color_hover" name="nav_color_hover" class="color" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="nav_letter_spacing">Letter Spacing</label></th>
+      <td>
+        <input id="nav_letter_spacing" name="nav_letter_spacing" value="" size="2" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="top_menu_size">Top Menu Size</label></th>
+      <td>
+        <input id="top_menu_size" name="top_menu_size" value="" size="2" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="top_menu_color">Top Menu Color</label></th>
+      <td>
+        <input id="top_menu_color" name="top_menu_color" class="color" value="" />
+      </td>
+    </tr>
+  </table>
+  
+  <br />
+  <hr />
+  <br />
+  
+  <table>
+    <tr>
+      <th><label for="regular_typeface_method">Regular Text Typeface:</label></th>
+      <td>
+        <input type="radio" name="regular_typeface_method" value="google_webfonts" /> <a href="http://www.google.com/webfonts" >Google Web fonts</a><br />
+        <input type="radio" name="regular_typeface_method" value="websafe" /> Web Safe        
+      </td>
+    </tr>
+    
+    <tr>
+      <th><label for="regular_google_webfont_font">Google WebFont Typeface</label></th>
+      <td>
+        <select name="regular_google_webfont_font" id="regular_google_webfont_font">
+          <option value='Anton'>Anton</option>
+          <option value='Arvo'>Arvo</option>
+          <option value='Asap'>Asap</option>          
+          <option value='Bevan'>Bevan</option>
+          <option value='Cabin'>Cabin</option>
+          <option value='Copse'>Copse</option>
+          <option value='Corben'>Corben</option>
+          <option value='Dancing+Script'>Dancing Script</option>
+          <option value='Droid+Sans'>Droid Sans</option>
+          <option value='Droid+Serif'>Droid Serif</option>
+          <option value='Josefin+Slab'>Josefin Slab</option>
+          <option value='Josefin+Sans'>Josefin Sans</option>
+          <option value='Just+Another+Hand'>Just Another Hand</option>
+          <option value='Kreon'>Kreon</option>
+          <option value='Lato'>Lato</option>          
+          <option value='Lora'>Lora</option>          
+          <option value='Lobster'>Lobster</option>                                        
+          <option value='Merriweather'>Merriweather</option>
+          <option value='Molengo'>Molengo</option>      
+          <option value='Montserrat'>Montserrat</option>          
+          <option value='Neuton'>Neuton</option>
+          <option value='Open+Sans'>Open Sans</option>
+          <option value='Open+Sans+Condensed'>Open Sans Condensed</option>
+          <option value='Oswald'>Oswald</option>
+          <option value='Parisienne'>Parisienne</option>          
+          <option value='Permanent+Marker'>Permanent Marker</option>
+          <option value='Philosopher'>Philosopher</option>
+          <option value='PT+Sans+Narrow'>PT Sans Narrow</option>
+          <option value='Questrial'>Questrial</option>          
+          <option value='Rokkitt'>Rokkitt</option>          
+          <option value='Vibur'>Vibur</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="regular_websafe_font">Web safe Typeface</label></th>
+      <td>
+        <select class="font" name="regular_websafe_font" id="regular_websafe_font">
+          <optgroup label="Sans-serif">
+            <option value="Futura, 'Century Gothic', AppleGothic, sans-serif">Futura</option>
+            <option value="Helvetica, Arial, sans-serif">Helvetica/Arial</option> 
+            <option value="'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica Neue Light</option>             
+            <option value="'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif">Lucida Grande</option> 
+            <option value="Trebuchet MS, sans-serif">Trebuchet MS</option> 
+            <option value="Verdana, Helvetica, Arial, sans-serif">Verdana</option>
+          </optgroup>
+          <optgroup label="Serif">
+            <option value="Garamond, Baskerville, Caslon, serif">Garamond</option> 
+            <option value="Georgia, Utopia, 'Times New Roman', Times, serif">Georgia</option> 
+            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+          </optgroup>
+          <optgroup label="Monospace">
+            <option value="Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace">Monaco/Lucida Console</option>
+          </optgroup>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="regular_weight">Font Weight</label></th>
+      <td>
+        <select name="regular_weight" id="regular_weight">
+          <option value="lighter">Light</option>
+          <option value="normal" selected="selected">Regular</option>
+          <option value="bold">Bold</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="regular_font_style">Font Style</label></th>
+      <td>
+        <select name="regular_font_style" id="regular_font_style">
+          <option value="none" selected="selected">None</option>
+          <option value="uppercase">Uppercase</option>
+          <option value="lowercase">Lowercase</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="regular_font_size">Font Size</label></th>
+      <td>
+        <input id="regular_font_size" name="regular_font_size" size="2" value="" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="regular_color">Color</label></th>
+      <td>
+        <input id="regular_color" name="regular_color" class="color" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="footer_font_size">Footer Font Size</label></th>
+      <td>
+        <input id="footer_font_size" name="footer_font_size" size="2" value="" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="footer_text_color">Footer Text Color</label></th>
+      <td><input id="footer_text_color" name="footer_text_color" class="color" value="#AE3333" /></td>
+    </tr>
+  </table>  
+</fieldset>
+<fieldset>
+  <legend>Home Page</legend>
+  <table>
+    <tr>
+      <th><label for="frontpage_linklist">Home Page Collections Link List (<a href="http://support.outofthesandbox.com/customer/portal/articles/942377" >?</a>)</label></th>
+      <td><select name="frontpage_linklist" class="linklist" /></td>
+    </tr>
+    <tr>
+      <th><label for="frontpage_collections_per_row">Home Page Collections Per Row</label></th>
+      <td>
+        <select name="frontpage_collections_per_row" id="frontpage_collections_per_row">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="frontpage_collection2">Home Page Product Collection</label></th>
+      <td><select name="frontpage_collection2" class="collection" /></td>
+    </tr>
+    <tr>
+      <th><label for="frontpage_collection">Home Page Product Collection</label></th>
+      <td><select name="frontpage_collection" class="collection" /></td>
+    </tr>
+    <tr>
+      <th><label for="frontpage_products_per_row">Home Page Products Per Row</label></th>
+      <td>
+        <select name="frontpage_products_per_row" id="frontpage_products_per_row">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="homepage">Home Page Content</label></th>
+      <td><select class="page" name="homepage" id="homepage" /></td>
+    </tr>
+    <tr>
+      <th><label for="blog_widget">"Recent Blog Articles" Widget Enabled</label></th>
+      <td>
+        <input type="checkbox" id="blog_widget" name="blog_widget" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="blog_widget_select">Blog Articles for Widget</label></th>
+      <td><select name="blog_widget_select" class="blog" /></td>
+    </tr>
+    <tr>
+      <th><label for="home_page_articles">Blog Articles Count</label></th>
+      <td>
+        <input id="home_page_articles" name="home_page_articles" size="2" value="4" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="twitter_widget">"Recent Tweets" Widget Enabled</label></th>
+      <td>
+         <input type="checkbox" id="twitter_widget" name="twitter_widget" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="twitter_username">Twitter Username</label></th>
+      <td>@<input type="text" name="twitter_username" id="twitter_username" value="" /></td>
+    </tr>
+    <tr>
+      <th><label for="instagram_widget">Instagram Widget Enabled</label></th>
+      <td>
+        <input type="checkbox" id="instagram_widget" name="instagram_widget" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="instagram_client_id">Instagram Client ID (<a href="http://support.outofthesandbox.com/customer/portal/articles/1405638-instagram-home-page-feed" target="_blank">?</a>)</label></th>
+      <td>
+        <input type="text" id="instagram_client_id" name="instagram_client_id" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="instagram_title">Instagram Widget Title</label></th>
+      <td><input type="text" name="instagram_title" id="instagram_title" value="Instagram" /></td>
+    </tr>
+    <tr>
+      <th><label for="instagram_tag_name">Instagram Image Tag Name</label></th>
+      <td>#<input type="text" name="instagram_tag_name" id="instagram_tag_name" value="" /></td>
+    </tr>
+    <tr>
+      <th><label for="instagram_count">Number of Images</label></th>
+      <td>
+        <input id="instagram_count" name="instagram_count" size="2" value="10" />
+      </td>
+    </tr>      
+    <tr>
+      <td colspan="2">
+        <h3>Slideshow Images (1600x800 maximum)</h3>
+        For best results, upload images that are 1280px in width and under 600px in height. Try to keep your slideshow images the same size.
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="slideshow_enabled">Slideshow Enabled</label></th>
+      <td>
+        <input type="checkbox" id="slideshow_enabled" name="slideshow_enabled" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_animation">Slideshow Animation</label></th>
+      <td>
+        <select name="slideshow_animation" id="slideshow_animation">
+          <option value="fade">Fade</option>
+          <option value="slide">Slide</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_stretch">Stretch Slideshow to Full Screen Width</label></th>
+      <td>
+        <input type="checkbox" id="slideshow_stretch" name="slideshow_stretch" checked="checked" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_width_narrow">Set Slideshow Width to 940px</label></th>
+      <td>
+        <input type="checkbox" id="slideshow_width_narrow" name="slideshow_width_narrow" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_speed">Slideshow Speed</label></th>
+      <td>
+        <input type="input" id="slideshow_speed" name="slideshow_speed" size="1" /> seconds
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_headline_size">Slideshow Headline Font Size</label></th>
+      <td>
+        <input type="text" id="slideshow_headline_size" name="slideshow_headline_size" value="" size="3" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_headline_weight">Slideshow Headline Font Weight</label></th>
+      <td>
+        <select name="slideshow_headline_weight" id="slideshow_headline_weight">
+          <option value="lighter">Light</option>
+          <option value="normal" selected="selected">Regular</option>
+          <option value="bold">Bold</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_subtitle_size">Slideshow Subtitle Font Size</label></th>
+      <td>
+        <input type="text" id="slideshow_subtitle_size" name="slideshow_subtitle_size" value="" size="3" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_subtitle_weight">Slideshow Subtitle Font Weight</label></th>
+      <td>
+        <select name="slideshow_subtitle_weight" id="slideshow_subtitle_weight">
+          <option value="lighter">Light</option>
+          <option value="normal" selected="selected">Regular</option>
+          <option value="bold">Bold</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="video_embed">Video Embed Snippet (<a href="http://j.mp/15p1Wls" >?</a>)</label></th>
+      <td>
+        <textarea type="text" id="video_embed" name="video_embed" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="video_width">Video Maximum Width</label></th>
+      <td>
+        <input type="radio" name="video_width" value="max" selected="selected" /> Unlimited <br />
+        <input type="radio" name="video_width" value="set" /> <input type="text" id="video_width_px" name="video_width_px" value="" size="4" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="video_position">Video Slideshow Position</label></th>
+      <td>
+        <select name="video_position" id="video_position">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_1_enabled">Image 1 Enabled</label></th>
+      <td>
+        <input type="checkbox" id="slideshow_1_enabled" name="slideshow_1_enabled" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_1">Image 1</label></th>
+      <td>
+        <input type="file" id="slideshow_1" name="slideshow_1.jpg" data-max-width="1600" data-max-height="800" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_1_alt_text">ALT Text:</label></th>
+      <td>
+        <input type="text" id="image_1_alt_text" name="image_1_alt_text" value="" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="image_1_headline">Headline:</label></th>
+      <td>
+        <input type="text" id="image_1_headline" name="image_1_headline" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_1_subtitle">Subtitle:</label></th>
+      <td>
+        <input type="text" id="image_1_subtitle" name="image_1_subtitle" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_1_text_color">Text Color</label></th>
+      <td><input id="image_1_text_color" name="image_1_text_color" class="color" value="#ffffff" /></td>
+    </tr>
+    <tr>
+      <th><label for="image_1_text_align">Text Alignment</label></th>
+      <td><select name="image_1_text_align" id="image_1_text_align">
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select></td>
+    </tr>
+    <tr>
+      <th><label for="image_1_button_text">Button Text:</label></th>
+      <td>
+        <input type="text" id="image_1_button_text" name="image_1_button_text" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_1_link">Link URL:</label></th>
+      <td>
+        <input type="text" id="image_1_link" name="image_1_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+   <tr>
+      <th><label for="slideshow_2_enabled">Image 2 Enabled</label></th>
+      <td>
+        <input type="checkbox" id="slideshow_2_enabled" name="slideshow_2_enabled" value="2" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_2">Image 2</label></th>
+      <td>
+        <input type="file" id="slideshow_2" name="slideshow_2.jpg" data-max-width="1600" data-max-height="800" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_2_alt_text">ALT Text:</label></th>
+      <td>
+        <input type="text" id="image_2_alt_text" name="image_2_alt_text" value="" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="image_2_headline">Headline:</label></th>
+      <td>
+        <input type="text" id="image_2_headline" name="image_2_headline" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_2_subtitle">Subtitle:</label></th>
+      <td>
+        <input type="text" id="image_2_subtitle" name="image_2_subtitle" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_2_text_color">Text Color</label></th>
+      <td><input id="image_2_text_color" name="image_2_text_color" class="color" value="#ffffff" /></td>
+    </tr>
+    <tr>
+      <th><label for="image_2_text_align">Text Alignment</label></th>
+      <td><select name="image_2_text_align" id="image_2_text_align">
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select></td>
+    </tr>
+    <tr>
+      <th><label for="image_2_button_text">Button Text:</label></th>
+      <td>
+        <input type="text" id="image_2_button_text" name="image_2_button_text" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_2_link">Link URL:</label></th>
+      <td>
+        <input type="text" id="image_2_link" name="image_2_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+   <tr>
+      <th><label for="slideshow_3_enabled">Image 3 Enabled</label></th>
+      <td>
+        <input type="checkbox" id="slideshow_3_enabled" name="slideshow_3_enabled" value="3" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_3">Image 3</label></th>
+      <td>
+        <input type="file" id="slideshow_3" name="slideshow_3.jpg" data-max-width="1600" data-max-height="800" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_3_alt_text">ALT Text:</label></th>
+      <td>
+        <input type="text" id="image_3_alt_text" name="image_3_alt_text" value="" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="image_3_headline">Headline:</label></th>
+      <td>
+        <input type="text" id="image_3_headline" name="image_3_headline" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_3_subtitle">Subtitle:</label></th>
+      <td>
+        <input type="text" id="image_3_subtitle" name="image_3_subtitle" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_3_text_color">Text Color</label></th>
+      <td><input id="image_3_text_color" name="image_3_text_color" class="color" value="#ffffff" /></td>
+    </tr>
+    <tr>
+      <th><label for="image_3_text_align">Text Alignment</label></th>
+      <td><select name="image_3_text_align" id="image_3_text_align">
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select></td>
+    </tr>    
+    <tr>
+      <th><label for="image_3_button_text">Button Text:</label></th>
+      <td>
+        <input type="text" id="image_3_button_text" name="image_3_button_text" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_3_link">Link URL:</label></th>
+      <td>
+        <input type="text" id="image_3_link" name="image_3_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+   <tr>
+      <th><label for="slideshow_4_enabled">Image 4 Enabled</label></th>
+      <td>
+        <input type="checkbox" id="slideshow_4_enabled" name="slideshow_4_enabled" value="4" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_4">Image 4</label></th>
+      <td>
+        <input type="file" id="slideshow_4" name="slideshow_4.jpg" data-max-width="1600" data-max-height="800" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_4_alt_text">ALT Text:</label></th>
+      <td>
+        <input type="text" id="image_4_alt_text" name="image_4_alt_text" value="" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="image_4_headline">Headline:</label></th>
+      <td>
+        <input type="text" id="image_4_headline" name="image_4_headline" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_4_subtitle">Subtitle:</label></th>
+      <td>
+        <input type="text" id="image_4_subtitle" name="image_4_subtitle" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_4_text_color">Text Color</label></th>
+      <td><input id="image_4_text_color" name="image_4_text_color" class="color" value="#ffffff" /></td>
+    </tr>
+    <tr>
+      <th><label for="image_4_text_align">Text Alignment</label></th>
+      <td><select name="image_4_text_align" id="image_4_text_align">
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select></td>
+    </tr>    
+    <tr>
+      <th><label for="image_4_button_text">Button Text:</label></th>
+      <td>
+        <input type="text" id="image_4_button_text" name="image_4_button_text" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_4_link">Link URL:</label></th>
+      <td>
+        <input type="text" id="image_4_link" name="image_4_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+   <tr>
+      <th><label for="slideshow_5_enabled">Image 5 Enabled</label></th>
+      <td>
+        <input type="checkbox" id="slideshow_5_enabled" name="slideshow_5_enabled" value="5" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_5">Image 5</label></th>
+      <td>
+        <input type="file" id="slideshow_5" name="slideshow_5.jpg" data-max-width="1600" data-max-height="800" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_5_alt_text">ALT Text:</label></th>
+      <td>
+        <input type="text" id="image_5_alt_text" name="image_5_alt_text" value="" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="image_5_headline">Headline:</label></th>
+      <td>
+        <input type="text" id="image_5_headline" name="image_5_headline" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_5_subtitle">Subtitle:</label></th>
+      <td>
+        <input type="text" id="image_5_subtitle" name="image_5_subtitle" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_5_text_color">Text Color</label></th>
+      <td><input id="image_5_text_color" name="image_5_text_color" class="color" value="#ffffff" /></td>
+    </tr>
+    <tr>
+      <th><label for="image_5_text_align">Text Alignment</label></th>
+      <td><select name="image_5_text_align" id="image_5_text_align">
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select></td>
+    </tr>    
+    <tr>
+      <th><label for="image_5_button_text">Button Text:</label></th>
+      <td>
+        <input type="text" id="image_5_button_text" name="image_5_button_text" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_5_link">Link URL:</label></th>
+      <td>
+        <input type="text" id="image_5_link" name="image_5_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+   <tr>
+      <th><label for="slideshow_6_enabled">Image 6 Enabled</label></th>
+      <td>
+        <input type="checkbox" id="slideshow_6_enabled" name="slideshow_6_enabled" value="6" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="slideshow_6">Image 6</label></th>
+      <td>
+        <input type="file" id="slideshow_6" name="slideshow_6.jpg" data-max-width="1600" data-max-height="800" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_6_alt_text">ALT Text:</label></th>
+      <td>
+        <input type="text" id="image_6_alt_text" name="image_6_alt_text" value="" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="image_6_headline">Headline:</label></th>
+      <td>
+        <input type="text" id="image_6_headline" name="image_6_headline" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_6_subtitle">Subtitle:</label></th>
+      <td>
+        <input type="text" id="image_6_subtitle" name="image_6_subtitle" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_6_text_color">Text Color</label></th>
+      <td><input id="image_6_text_color" name="image_6_text_color" class="color" value="#ffffff" /></td>
+    </tr>
+    <tr>
+      <th><label for="image_6_text_align">Text Alignment</label></th>
+      <td><select name="image_6_text_align" id="image_6_text_align">
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select></td>
+    </tr>    
+    <tr>
+      <th><label for="image_6_button_text">Button Text:</label></th>
+      <td>
+        <input type="text" id="image_6_button_text" name="image_6_button_text" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="image_6_link">Link URL:</label></th>
+      <td>
+        <input type="text" id="image_6_link" name="image_6_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>            
+  </table>
+</fieldset>
+<fieldset>
+  <legend>Product Page</legend>
+  <table>
+    
+    <tr>
+      <th><label for="display_tags">Display Tags</label></th>
+      <td>
+        <input type="checkbox" id="display_tags" name="display_tags" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_type">Display Type</label></th>
+      <td>
+        <input type="checkbox" id="display_type" name="display_type" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_vendor">Display Vendor</label></th>
+      <td>
+        <input type="checkbox" id="display_vendor" name="display_vendor" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_collections">Display Collections</label></th>
+      <td>
+        <input type="checkbox" id="display_collections" name="display_collections" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_social_buttons">Display Social Sharing Buttons</label></th>
+      <td>
+        <input type="checkbox" id="display_social_buttons" name="display_social_buttons" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_pinterest_button">Display <a href="http://pinterest.com/" >Pinterest</a> Button</label></th>
+      <td>
+        <input type="checkbox" id="display_pinterest_button" name="display_pinterest_button" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_fancy_button">Display <a href="http://www.thefancy.com/" >Fancy</a> Button</label></th>
+      <td>
+        <input type="checkbox" id="display_fancy_button" name="display_fancy_button" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="product_images_position">Product Images Position</label></th>
+      <td>
+        <input type="radio" name="product_images_position" value="left" /> Left
+        <input type="radio" name="product_images_position" value="right" /> Right
+      </td>
+    </tr>
+    <tr>
+      <th><label for="product_slideshow_animation">Product Image Gallery</label></th>
+      <td>
+        <select name="product_slideshow_animation" id="product_slideshow_animation">
+          <option value="none">None</option>
+          <option value="slide" checked="checked">Slide</option>
+          <option value="fade">Fade</option>
+          <option value="zoom">Hover to Zoom</option>
+        </select>
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="product_description_position">Product Description Position</label></th>
+      <td>
+        <input type="radio" name="product_description_position" value="top" /> Above 'Add to Cart'
+        <input type="radio" name="product_description_position" value="bottom" /> Below 'Add to Cart'
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_related_products">Display Related Products (<a href="http://support.outofthesandbox.com/customer/portal/articles/942378-related-products" >?</a>)</label></th>
+      <td>
+        <input type="checkbox" id="display_related_products" name="display_related_products" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="add_to_cart_text">"Add to Cart" Text</label></th>
+      <td><input id="add_to_cart_text" name="add_to_cart_text" type="text" value="Add to Cart" /></td>
+    </tr>    
+    <tr>
+      <th><label for="sold_out_text">"Sold Out" Text</label></th>
+      <td><input id="sold_out_text" name="sold_out_text" type="text" value="Sold Out" /></td>
+    </tr>
+    <tr>
+      <th><label for="related_products_title">Related Products Title</label></th>
+      <td><input id="related_products_title" name="related_products_title" type="text" value="Related Items" /></td>
+    </tr>    
+    <tr>
+      <th><label for="cart_return">'Add to Cart' Redirect</label></th>
+      <td>
+        <input type="radio" name="cart_return" value="checkout" checked="checked" /> Cart Page
+        <input type="radio" name="cart_return" value="back" /> Previous Page
+      </td>
+    </tr>
+    <tr>
+      <th><label for="notify_me_form">Display "Back in Stock Request" Form</label></th>
+      <td>
+        <input type="checkbox" id="notify_me_form" name="notify_me_form" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_product_quantity">Display Product Quantity Box</label></th>
+      <td>
+        <input type="checkbox" id="display_product_quantity" name="display_product_quantity" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_inventory_left">Display Inventory Left</label></th>
+      <td>
+        <input type="checkbox" id="display_inventory_left" name="display_inventory_left" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="inventory_left_text">Inventory Left Text</label></th>
+      <td><input id="inventory_left_text" name="inventory_left_text" type="text" value="items left" /></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <p>
+          <strong>Associate Product Variants with Product Images</strong>
+        </p>
+        
+        <p>
+          Match up your product’s variants with your product image’s ALT text. The product variants must be exactly the same as the product image’s ALT text and contain unique name. <a href="http://support.outofthesandbox.com/customer/portal/articles/942376-associate-product-variants-with-product-images" >Read more →</a>
+        </p>
+      </td>
+    </tr>
+    <tr>  
+      <th><label for="option_to_match">Associated Variant Name<br />(i.e. Color)</label></th>
+      <td>
+        <input type="text" id="option_to_match" name="option_to_match" value="" />
+      </td>
+    </tr>
+    
+  </table>
+</fieldset>
+<fieldset>
+  <legend>Collection Page</legend>
+  <table>
+    <tr>
+      <th><label for="products_per_row">Products Per Row</label></th>
+      <td>
+        <select name="products_per_row" id="products_per_row">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="mobile_products_per_row">Products Per Row on Mobile</label></th>
+      <td>
+        <select name="mobile_products_per_row" id="mobile_products_per_row">
+          <option value="1">1</option>
+          <option value="2" selected="selected">2</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="pagination_limit">Products Per Page</label></th>
+      <td>
+        <select name="pagination_limit" id="pagination_limit">
+          <option value="24">24</option>
+          <option value="36">36</option>
+          <option value="48">48</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="align_height">Align Height of Product Images</label></th>
+      <td>
+        <input type="checkbox" id="align_height" name="align_height" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="collection_height">Product Image Height</label></th>
+      <td>
+        <input type="text" id="collection_height" name="collection_height" value="" size="3" />px
+      </td>
+    </tr>
+    <tr>
+      <th><label for="collection_tags">Filter by Tags</label></th>
+      <td>
+        <input type="checkbox" id="collection_tags" name="collection_tags" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="sale_banner_enabled">Display Sale Banners</label></th>
+      <td>
+        <input type="checkbox" id="sale_banner_enabled" name="sale_banner_enabled" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="quick_shop_enabled">Quick View Enabled</label></th>
+      <td>
+        <input type="checkbox" id="quick_shop_enabled" name="quick_shop_enabled" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="description_words">Quick View product description words</label></th>
+      <td>
+        <input type="text" id="description_words" name="description_words" value="" size="2" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="quick_shop_text">"Quick View" Text</label></th>
+      <td>
+        <input type="text" id="quick_shop_text" name="quick_shop_text" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="collection_sidebar">Collection Sidebar Enabled</label></th>
+      <td>
+        <input type="checkbox" id="collection_sidebar" name="collection_sidebar" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="collection_sidebar_linklist">Collection Sidebar Link List</label></th>
+      <td><select name="collection_sidebar_linklist" class="linklist" /></td>
+    </tr>
+    <tr>
+      <th><label for="collection_sidebar_linklist2">Sidebar Link List 2</label></th>
+      <td><select name="collection_sidebar_linklist2" class="linklist" /></td>
+    </tr>    
+    <tr>
+      <th><label for="filter_by_category">Collection Sidebar List of Collections</label></th>
+      <td>
+        <input type="checkbox" id="filter_by_category" name="filter_by_category" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="collection_sidebar_products">Collection Sidebar Product Types</label></th>
+      <td>
+        <input type="checkbox" id="collection_sidebar_products" name="collection_sidebar_products" />
+      </td>
+    </tr>    
+    <tr>
+      <th><label for="collection_sidebar_vendors">Collection Sidebar Vendors</label></th>
+      <td>
+        <input type="checkbox" id="collection_sidebar_vendors" name="collection_sidebar_vendors" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="collection_sidebar_page">Collection Sidebar Content Page</label></th>
+      <td><select name="collection_sidebar_page" class="page" /></td>
+    </tr>    
+  </table>
+</fieldset>
+<fieldset>
+  <legend>Cart Page</legend>
+  <table>
+    <tr>
+      <th><label for="tax_included">Prices Include Tax</label></th>
+      <td>
+        <input type="checkbox" id="tax_included" name="tax_included" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_special_instructions">Include "Special Instructions" Text Box on Checkout</label></th>
+      <td>
+        <input type="checkbox" id="display_special_instructions" name="display_special_instructions" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="show_shipping_calculator">Display shipping rates calculator</label></th>
+      <td><input type="checkbox" id="show_shipping_calculator" name="show_shipping_calculator" value="1" /></td>
+    </tr>
+    <tr>
+      <th><label for="shipping_calculator_heading">Shipping Rates Calculator Heading</label></th>
+      <td>
+        <input type="text" name="shipping_calculator_heading" id="shipping_calculator_heading" class="text long" value="Shipping rates calculator" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="shipping_calculator_default_country">Shipping Rates Calculator default country selection</label></th>
+      <td>
+        <input type="text" name="shipping_calculator_default_country" id="shipping_calculator_default_country" class="text long" value="United States" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><small>If your customer is logged-in, the country in his default shipping address will be selected. If you are not sure about the spelling to use above, refer to your first checkout page.</small></td>
+    </tr>
+    <tr>
+      <th><label for="shipping_calculator_submit_button_label">Shipping rates calculator submit button label</label></th>
+      <td>
+        <input type="text" name="shipping_calculator_submit_button_label" id="shipping_calculator_submit_button_label" class="text long" value="Calculate shipping rates" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="shipping_calculator_submit_button_label_disabled">Shipping rates calculator submit button label when calculating</label></th>
+      <td>
+        <input type="text" name="shipping_calculator_submit_button_label_disabled" id="shipping_calculator_submit_button_label_disabled" class="text long" value="Calculating..." />
+      </td>
+    </tr>
+  </table>
+</fieldset>
+<fieldset>
+  <legend>Blog</legend>
+  <table>
+    <tr>
+      <th><label for="display_recent_articles">Display Recent Articles</label></th>
+      <td>
+        <input type="checkbox" id="display_recent_articles" name="display_recent_articles" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="display_social_buttons_blog">Display Social Sharing Buttons</label></th>
+      <td>
+        <input type="checkbox" id="display_social_buttons_blog" name="display_social_buttons_blog" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="blog_tags">Display Blog Tags</label></th>
+      <td>
+        <input type="checkbox" id="blog_tags" name="blog_tags" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="blog_author">Display Author</label></th>
+      <td>
+        <input type="checkbox" id="blog_author" name="blog_author" value="0" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="blog_content_page">Sidebar Content Page</label></th>
+      <td><select class="page" name="blog_content_page" id="blog_content_page" /></td>
+    </tr>
+    <tr>
+      <th><label for="disqus_enabled"><a href="http://disqus.com/">DISQUS</a> Comments Enabled (instead of Shopify's default comments)</label></th>
+      <td>
+        <input type="checkbox" id="disqus_enabled" name="disqus_enabled" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="disqus_shortname"><a href="http://disqus.com/">DISQUS</a> Shortname</label></th>
+      <td>
+        <input type="text" id="disqus_shortname" name="disqus_shortname" value="" />
+      </td>
+    </tr>
+  </table>
+</fieldset>
+<fieldset>
+  <legend>Footer</legend>
+  <table>
+    <tr>
+      <th><label for="newsletter_enabled">Newsletter Sign Up Form</label></th>
+      <td>
+        <input type="checkbox" id="newsletter_enabled" name="newsletter_enabled" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="newsletter_text">Newsletter Title Text</label></th>
+      <td><input name="newsletter_text" type="text" id="newsletter_text" value="Newsletter" /></td>
+    </tr>
+    <tr>
+      <th><label for="newsletter_description">Newsletter Description Text</label></th>
+      <td><input name="newsletter_description" type="text" id="newsletter_description" value="" /></td>
+    </tr>
+    <tr>
+      <th><label for="newsletter_system">Newsletter System</label></th>
+      <td>
+        <input type="radio" name="newsletter_system" value="shopify" /> Shopify
+        <br />
+        <input type="radio" name="newsletter_system" value="mailchimp" /> <a href="http://mailchimp.com/">MailChimp</a>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="mailchimp_link">MailChimp Form Action URL (<a href="http://support.outofthesandbox.com/customer/portal/articles/942352" >?</a>)</label></th>
+      <td>
+        <input type="text" id="mailchimp_link" name="mailchimp_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <br />
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="footer_linklist_1">Menu 1</label></th>
+      <td><select name="footer_linklist_1" class="linklist" /></td>
+    </tr>
+    <tr>
+      <th><label for="footer_linklist_2">Menu 2</label></th>
+      <td><select name="footer_linklist_2" class="linklist" /></td>
+    </tr>
+    <tr>
+      <th><label for="footer_content_page">Footer Content Page</label></th>
+      <td><select name="footer_content_page" class="page" /></td>
+    </tr>
+    <tr>
+      <th><label for="display_designed_by">Display Theme Designer Credits</label></th>
+      <td><input type="checkbox" id="display_designed_by" name="display_designed_by" /></td>
+    </tr>
+    <tr>
+      <th><label for="social_text">Social Title Text</label></th>
+      <td><input name="social_text" type="text" id="social_text" value="Social" /></td>
+    </tr>
+    <tr>
+      <th><label for="footer_social_icons">Display Social Icons?</label></th>
+      <td>
+        <input type="checkbox" id="footer_social_icons" name="footer_social_icons" value="1" />
+      </td>
+    </tr>    
+    <tr>
+      <td colspan="2">
+        <p>
+          <strong>Include the full http:// URL with your links:</strong>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="twitter_link">Twitter Link</label></th>
+      <td>
+        <input type="text" id="twitter_link" name="twitter_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="facebook_link">Facebook Link</label></th>
+      <td>
+        <input type="text" id="facebook_link" name="facebook_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="google_link">Google+ Link</label></th>
+      <td>
+        <input type="text" id="google_link" name="google_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="youtube_link">YouTube Link</label></th>
+      <td>
+        <input type="text" id="youtube_link" name="youtube_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="vimeo_link">Vimeo Link</label></th>
+      <td>
+        <input type="text" id="vimeo_link" name="vimeo_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="pinterest_link">Pinterest Link</label></th>
+      <td>
+        <input type="text" id="pinterest_link" name="pinterest_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="tumblr_link">Tumblr Link</label></th>
+      <td>
+        <input type="text" id="tumblr_link" name="tumblr_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="instagram_link">Instagram Link</label></th>
+      <td>
+        <input type="text" id="instagram_link" name="instagram_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="linkedin_link">LinkedIn Link</label></th>
+      <td>
+        <input type="text" id="linkedin_link" name="linkedin_link" value="" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="flickr_link">Flickr Link</label></th>
+      <td>
+        <input type="text" id="flickr_link" name="flickr_link" value="" />
+      </td>
+    </tr>
+    <tr><td colspan="3"><br /><hr /></td></tr>
+    <tr>
+       <th><label for="payment_methods">Payment Methods</label></th>
+       <td>
+         <input type="checkbox" id="use_paypal" name="use_paypal" value="0" /> PayPal <br />
+         <input type="checkbox" id="use_bitcoin" name="use_bitcoin" value="0" /> Bitcoin <br />                  
+         <input type="checkbox" id="use_visa" name="use_visa" value="0" /> Visa <br />
+         <input type="checkbox" id="use_visaelectron" name="use_visaelectron" value="0" /> Visa Electron <br />         
+         <input type="checkbox" id="use_mastercard" name="use_mastercard" value="0" /> Mastercard <br />
+         <input type="checkbox" id="use_amex" name="use_amex" value="0" /> American Express <br />
+         <input type="checkbox" id="use_cirrus" name="use_cirrus" value="0" /> Cirrus <br />
+         <input type="checkbox" id="use_delta" name="use_delta" value="0" /> Delta <br />
+         <input type="checkbox" id="use_discover" name="use_discover" value="0" /> Discover <br /> 
+         <input type="checkbox" id="use_western_union" name="use_western_union" value="0" /> Western Union <br />               
+       </td>
+     </tr>
+  </table>
+</fieldset>
+<fieldset>
+  <legend>Currency Converter</legend>
+  <table>
+    <tr>
+      <td colspan="2"><small>To enable this feature, you must first edit your money formats as per <a href="http://wiki.shopify.com/Do_Tell_Where_The_Money_Is" target="_blank">these instructions</a> (“Do tell where the money is”).</small></td>
+    </tr>
+    <tr>
+      <td colspan="2"><small>Although you will be able to display prices on your store front in different currencies, Shopify will still process orders in your shop's currency.</small></td>
+    </tr>
+    <tr>
+      <td><label for="show_multiple_currencies">Currency selector enabled??</label></td>
+      <td><input type="checkbox" id="show_multiple_currencies" name="show_multiple_currencies" /></td>
+    </tr>
+    <tr>
+      <td><label for="currency_format">Money format</label></td>
+      <td>
+        <select name="currency_format" id="currency_format">
+          <option value="money_format" selected="selected">
+            Without Currency, ex: $10.00
+          </option>
+          <option value="money_with_currency_format">
+            With Currency, ex: $10.00 USD
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="supported_currencies">Currencies you wish to support</label></td>
+      <td><input type="text" class="text long" name="supported_currencies" id="supported_currencies" value="USD CAD" /></td>
+    </tr>
+    <tr>
+      <td><label for="default_currency">Default currency</label></td>
+      <td><input type="text" class="text" name="default_currency" id="default_currency" value="USD" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><small>Separate your currency codes with a space. Use the ISO 4217 3-letter currency code. <a target="_blank" href="http://www.xe.com/iso4217.php">Complete list of currency codes</a>. Example: <i>CAD USD</i>.</small></td>
+    </tr>
+  </table>
+</fieldset>
+<fieldset>
+  <legend>Newsletter Popup</legend>
+  <table>
+    <tr>
+      <td colspan="2"><small>To test this feature, set the number of days until the popup is displayed again to 0.</small></td>
+    </tr>
+    <tr>
+      <th><label for="newsletter_popup">Popup Enabled?</label></th>
+      <td>
+        <input type="checkbox" id="newsletter_popup" name="newsletter_popup" value="1" />
+      </td>
+    </tr>
+    <tr>
+      <th><label for="newsletter_popup_form">Display Newsletter Form?</label></th>
+      <td>
+        <input type="checkbox" id="newsletter_popup_form" name="newsletter_popup_form" checked="checked" value="1" />
+      </td>
+    </tr>       
+    <tr>
+      <th><label for="newsletter_popup_page">Popup Content Page</label></th>
+      <td><select class="page" name="newsletter_popup_page" id="newsletter_popup_page" /></td>
+    </tr>
+    <tr>
+      <th><label for="newsletter_popup_seconds">Seconds until Popup is Displayed</label></th>
+      <td><input id="newsletter_popup_seconds" name="newsletter_popup_seconds" size="3" value="2" /> seconds</td>
+    </tr>
+    <tr>
+      <th><label for="newsletter_popup_days">Days until Popup is Displayed Again</label></th>
+      <td><input id="newsletter_popup_days" name="newsletter_popup_days" size="3" value="30" /> days</td>
+    </tr>   
+    <tr>
+      <th><label for="newsletter_popup_max_width">Popup Maximum Width</label></th>
+      <td><input id="newsletter_popup_max_width" name="newsletter_popup_max_width" size="3" value="600" />px</td>
+    </tr>    
+  </table>
+</fieldset>

@@ -1,0 +1,62 @@
+{% comment %} SEO Meta Manager - v3.0 {% endcomment %}
+{% assign maxmeta = 155 %}
+{% assign metaControl = false %}
+{% if template contains 'product' %}
+	{% assign metaControl = true %}
+	{% assign metaArray = product.metafields.SEOMetaManager %}
+	{% assign defaultTitle = page_title %}
+	{% assign defaultDescription = page_description %}
+{% elsif template contains 'page' %}
+	{% assign metaControl = true %}
+	{% assign metaArray = page.metafields.SEOMetaManager %}
+	{% assign defaultTitle = page_title %}
+	{% assign defaultDescription = page_description %}
+{% elsif template contains 'collection' %}
+	{% assign metaControl = true %}
+	{% assign metaArray = collection.metafields.SEOMetaManager %}
+	{% assign defaultTitle = page_title %}
+	{% assign defaultDescription = page_description %}
+{% elsif template contains 'article' %}
+	{% assign metaControl = true %}
+	{% assign metaArray = article.metafields.SEOMetaManager %}
+	{% assign defaultTitle = page_title %}
+	{% assign defaultDescription = page_description %} 
+{% elsif template contains 'blog' %}
+	{% assign metaControl = true %}
+	{% assign metaArray = blog.metafields.SEOMetaManager %}
+	{% assign defaultTitle = page_title %}
+	{% assign defaultDescription = page_description %}
+{% elsif template contains 'index' %}	
+	{% assign metaControl = true %}
+	{% assign metaArray = shop.metafields.SEOMetaManager %}
+	{% assign defaultTitle = shop.name %}
+	{% assign defaultDescription = shop.description %}
+{% elsif template contains '404' %}	
+	<title>{{ shop.name }} - Page Not Found</title>
+	{% if shop.description != '' %}
+		<meta name='description' content='{{shop.description | escape }}' />
+	{% endif %}
+{% endif %}
+
+{% if metaControl == true %}	    
+	{% if metaArray == empty || metaArray == nil %}
+		<!-- SEO Meta Manager 3.0 (default data mode) -->
+		{% if page_title != '' %}
+			<title>{{ page_title | escape }}</title>
+		{% else %}
+			<title>{{defaultTitle}}</title>
+		{% endif %}
+			<meta name='description' content='{{defaultDescription | strip_html | strip_newlines | truncate: maxmeta | escape}}' />
+	{% else %}
+        <!-- SEO Meta Manager 3.0 -->
+		{% for keyVal in metaArray %}
+			{% capture key%}{{keyVal | first}}{%endcapture%}
+			{% capture value %}{{keyVal | last}}{% endcapture %}
+			{% case key %}
+				{% when 'title' %}<title>{{value}}</title>
+				{% when 'description' %}<meta name='description' content='{{value}}' />
+				{% when 'keywords' %}<meta name='keywords' content='{{value}}' />
+			{% endcase %}
+		{% endfor %}
+	{% endif %}	
+{% endif %}

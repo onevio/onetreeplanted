@@ -1,0 +1,9 @@
+{% if paginate.pages > 1 %}  
+  <div class="{% if pagination %}twelve{% else %}sixteen{% endif %} columns">
+    <div class="section clearfix">    
+      <div class="paginate">
+        {{ paginate | default_pagination }}
+      </div>  
+    </div>
+  </div>
+{% endif %}

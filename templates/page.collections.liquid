@@ -1,0 +1,24 @@
+<div class="sixteen columns clearfix collection_nav">
+  <h1 class="collection_title">
+    {{ page.title }}
+  </h1>
+</div>
+
+{% if page.content != blank %}
+  <div class="sixteen columns page">
+    <div class="section clearfix">    
+      {{ page.content }}
+    </div>
+  </div>
+{% endif %}
+
+
+{% comment %}
+  To display a page of collections, you can use the same method for displaying your 'home page collections' by creating a 'link list' of collections - http://support.outofthesandbox.com/customer/portal/articles/942377
+
+  Below, you'll need to replace "linklist-handle" with the desired handle of your link list. You can find the handle of your link list when you're editing it.
+{% endcomment %}
+
+{% assign linklist = linklists["linklist-handle"] %}
+{% assign collections_per_row = settings.frontpage_collections_per_row %}
+{% include 'collection-loop' %}

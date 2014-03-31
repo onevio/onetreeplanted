@@ -1,0 +1,62 @@
+
+
+
+  
+
+{% if customer %}  
+{% assign digest = customer.id | append:customer.email | append:'aea3bcff-ec15-4300-8b31-783c22173f6d' | md5 %}
+{% assign param = '?shop=onetreeplanted.org&customer=' | append:customer.id | append:'&version=2' | append:'&digest=' | append:digest | append:'&widget_css=bottom%3A0px%3Bright%3A20px%3B' | append:'&overlay_css=' %}
+{% else %}  
+{% assign param = '?shop=onetreeplanted.org' | append:'&version=2' | append:'&widget_css=bottom%3A0px%3Bright%3A20px%3B' | append:'&overlay_css=' %}
+{% endif %}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+{% assign widget = '//d6j2fa188icsm.cloudfront.net/site_media/static/js/shopify_statusbar.js' %}
+{{ widget | append:param | script_tag }}
+
+
+
+
+
+
+<div class="sloyalty-referral-widget"
+     data-shop="onetreeplanted.org"
+     data-customer="{% if customer %}{{ customer.id }}{% endif %}"></div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+<script src="//d6j2fa188icsm.cloudfront.net/site_media/static/js/shopify_referral.js"></script>
+
+
+
+
+
+
+{% if customer %}
+{% assign digest = customer.id | append:customer.email | append:'aea3bcff-ec15-4300-8b31-783c22173f6d' | md5 %}
+
+<div class="sloyalty-standalone-share-widget"
+     data-shop="onetreeplanted.org"
+     data-customer="{{ customer.id }}"
+     data-digest="{{ digest }}"></div>
+{% else %}
+<div class="sloyalty-standalone-share-widget"
+     data-shop="onetreeplanted.org"
+     data-customer=""></div>
+{% endif %}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+<script src="//d6j2fa188icsm.cloudfront.net/site_media/static/js/shopify_sharing_standalone.js"></script>
+
+
+
+
+
+
+<div class="sloyalty-fans-widget"
+     data-shop="onetreeplanted.org"
+     data-customer="{% if customer %}{{ customer.id }}{% endif %}"></div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+<script src="//d6j2fa188icsm.cloudfront.net/site_media/static/js/shopify_fans.js"></script>
+
+

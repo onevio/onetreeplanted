@@ -1,0 +1,201 @@
+{% paginate article.comments by 100 %}
+  <div class="sixteen columns">
+    <div class="clearfix breadcrumb">
+      <div class="right">       
+        {% if blog.previous_article %}
+          &laquo; <a href="{{ blog.previous_article }}" title="Previous Article">Prev</a>
+          {% if blog.next_article %}|{% endif %}
+        {% endif %}
+
+        {% if blog.next_article %}
+          <a href="{{ blog.next_article }}" title="Next Article">Next</a> &raquo;
+        {% endif %}
+      </div>
+
+      <a href="{{ blog.url }}" title="{{ blog.title | escape }}">&lt; {{ blog.title }}</a>      
+    </div>
+  </div>
+
+  <div class="sixteen columns">
+    <div class="five columns alpha omega blog_meta clearfix">
+      <h6>
+        {{ article.published_at | date: "%B %d, %Y" }}
+      </h6>
+
+      {% if article.comments_enabled? %}
+        <p>
+          <a href="{{ article.url }}#comments" class="title" title="{{ article.title | escape }} Comments">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
+        </p>
+      {% endif %}
+
+      {% if settings.blog_tags %}
+        <p class="meta">
+          {% for tag in article.tags %}
+            <a href="{{ shop.url }}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} tagged {{ tag | escape }}" class="tag">{{ tag }} &rsaquo;</a>
+          {% endfor %}
+        </p>
+      {% endif %}
+
+      <hr />
+     
+      {% include "social-buttons" with "article" %}
+
+      {% if settings.display_recent_articles %}
+        <hr />    
+        <h4 class="sidebar_title">Recent Articles</h4>
+        <ul class="border none">
+          {% for article in blog.articles limit:5 %}
+            <li>
+              <a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if settings.blog_content_page != blank %}
+        <hr />
+        {{ pages[settings.blog_content_page].content }}
+      {% endif %}
+
+      <form class="search" action="/search">
+        <input type="hidden" name="type" value="article" />
+        <input type="text" name="q" class="search_box" placeholder="Search {{ blog.title | escape }}..." value="{{ search.terms }}" />
+      </form>
+      <br class="clear" />
+    </div>
+
+    <div class="ten columns alpha blog_content">
+      <h1><a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a></h1>
+
+      {{ article.content }}
+
+      {% if settings.blog_author %}
+        <hr />
+        <div class="gravatar two columns alpha center" data-email="{{ article.user.email }}">
+          <img src="//1.gravatar.com/avatar/{{ article.user.email | md5 }}?s=80&r=G" alt="{{ article.author }}" />
+        </div>
+        <div class="comment-body eight columns omega">
+          <h6>{{ article.author }}</h6>
+          <p class="meta">
+            <span class="label">Author</span>
+          </p>
+          <p>
+            {{ article.user.bio }}
+          </p>
+        </div>
+        <hr />
+      {% endif %}
+
+      <br class="clear" />
+
+      <div class="clear" id="comments"></div>
+
+      {% if settings.disqus_enabled %}
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = '{{ settings.disqus_shortname }}'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      {% endif %}
+      
+      
+       {% if blog.comments_enabled? %}
+        {% if article.comments_count > 0 %}
+          <h4>{{ article.comments.size }} {{ article.comments.size | pluralize: 'Comment', 'Comments' }}</h4> 
+      
+          {% for comment in article.comments %}
+            <div id="comment-{{ comment.id }}" class="comment clearfix">
+              <div class="gravatar two columns alpha center" data-email="{{ comment.email }}">
+                <img src="//1.gravatar.com/avatar/{{ comment.email | md5 }}?s=80&r=G" alt="{{ comment.author }}" />
+              </div>
+              <div class="comment-body eight columns omega">
+                <h6>{{ comment.author }}</h6>
+                <p class="meta">
+                  <span class="label">{{ comment.created_at | date: "%B %d, %Y" }}</span>
+                </p>
+
+                {{ comment.content }}
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+        
+        {% if comment and comment.created_at %}
+          {% if article.comments_count == 0 %}
+            <h4>{{ article.comments.size | pluralize: 'Comment', 'Comments' }}</h4> 
+          {% endif %}
+          <div id="comment-{{ comment.id }}" class="comment clearfix">
+            <div class="gravatar two columns alpha center" data-email="{{ comment.email }}">
+              <img src="//1.gravatar.com/avatar/{{ comment.email | md5 }}?s=80&r=G" alt="{{ comment.author }}" />
+            </div>
+            <div class="comment-body eight columns omega">
+              <h6>{{ comment.author }}</h6>
+              <p class="meta">
+                <span class="label">{{ comment.created_at | date: "%B %d, %Y" }}</span>
+              </p>
+
+              {{ comment.content }}
+            </div>
+          </div>
+        {% endif %}
+        
+        {% include 'pagination' with 'sidebar' %}
+        
+        <div class="clear" id="new-comment"></div>
+        <h4>Leave a comment</h4>
+      
+        {% form article %}
+          {% if form.posted_successfully? %}
+            {% if blog.moderated? %}
+              <p class="quote align_left">Successfully posted your comment.<br /> Comments will be approved before showing up.</p>
+            {% else %}
+              <p class="quote align_left">Successfully posted your comment.</p>
+            {% endif %}
+          {% endif %}
+
+          {% if form.errors %}
+            <p class="quote align_left red">Not all the fields have been filled out correctly</p>
+          {% endif %}
+
+          <div class="five columns alpha">
+            <label for="comment_author">Name <span class="red">*</span></label>
+            <input type="text" id="comment_author" name="comment[author]" value="{{ form.author }}" />
+          </div>
+
+          <div class="five columns omega">
+            <label for="comment_email">Email <span class="red">*</span></label>      
+            <input type="text" id="comment_email" name="comment[email]" value="{{ form.email }}" />
+          </div>
+
+          <label for="comment_email">Comment</label>      
+          <textarea id="comment_body" name="comment[body]" rows="5">{{ form.body }}</textarea>
+
+          {% if blog.moderated? %}
+            <p><em>Comments will be approved before showing up.</em></p>
+          {% endif %}
+        
+          <input type="submit" value="Post Comment" id="comment-submit" class="action_button" />
+        {% endform %}
+      {% endif %}
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    // <![CDATA[  
+      $(function() {    
+        if(window.location.pathname.indexOf('/comments') != -1) {
+          $('html,body').animate({scrollTop: $("#new-comment").offset().top-110},'slow');
+        }
+      });
+    // ]]>
+  </script>
+{% endpaginate %}    

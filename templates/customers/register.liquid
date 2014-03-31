@@ -1,0 +1,50 @@
+{% layout settings.customer_layout %}
+
+<div class="sixteen columns clearfix collection_nav">
+  <h1 class="collection_title">Create Account</h1>
+</div>
+
+
+<div class="clearfix" id="customer">  
+  <div class="one-third column">
+    &nbsp;
+  </div>
+  <div class="six columns" id="login_form">
+    <div id="customer">
+      <!-- Create Customer -->
+      <div id="create-customer">
+
+        {% form 'create_customer' %}
+          {{ form.errors | default_errors }}
+
+          <div id="first_name" class="clearfix large_form">
+            <label for="first_name" class="login">First Name</label>
+            <input type="text" value="" name="customer[first_name]" id="first_name" class="large" size="30" />
+          </div>
+
+          <div id="last_name" class="clearfix large_form">
+            <label for="last_name" class="login">Last Name</label>
+            <input type="text" value="" name="customer[last_name]" id="last_name" class="large" size="30" />
+          </div>
+
+          <div id="email" class="clearfix large_form">
+            <label for="email" class="login">Email Address</label>
+            <input type="email" value="" name="customer[email]" id="email" class="large" size="30" />
+          </div>
+
+          <div id="password" class="clearfix large_form">
+            <label for="password" class="login">Password</label>
+            <input type="password" value="" name="customer[password]" id="password" class="large password" size="30" />
+          </div>
+
+          <div class="action_bottom">
+            <input class="action_button" type="submit" value="Sign Up" />
+            <p class="right">
+              Returning Customer? {{ "Sign In &rarr;" | customer_login_link }}
+            </p>
+          </div>
+        {% endform %}
+      </div><!-- /#create-customer -->
+    </div>
+  </div>
+</div>

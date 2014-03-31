@@ -1,0 +1,81 @@
+{% paginate blog.articles by 7 %}
+  {% assign tag_count = blog.all_tags | size %}
+  {% assign tag_threshold = 8 %}
+
+  <div class="sixteen columns clearfix collection_nav">
+    <h1 class="collection_title {% if settings.blog_tags and tag_count < tag_threshold %}collection_title_tags{% endif %}"><a href="{{ blog.url }}" title="{{ blog.title | escape }}">{{ blog.title }}</a></h1>
+
+    {% if settings.blog_tags %}
+      {% if tag_count < tag_threshold %}
+        <ul class="collection_menu">
+          <li>
+            <a href="{{ blog.url }}">{% if current_tags %}All{% else %}<span class="active">View All</span>{% endif %}</a>
+          </li>
+          {% for tag in blog.all_tags %}
+            <li>
+              {{ tag | highlight_active_tag | link_to_tag: tag }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endif %}
+    
+    {% if settings.blog_tags %}
+      <select name="tag_filter" id="tag_filter" {% if tag_count >= tag_threshold %}style="display:block"{% endif %}>
+        <option {% unless current_tags %}selected="selected"{% endunless %} value="{{ blog.url }}">View All</option>
+        {% for tag in blog.all_tags %}
+          <option {% if current_tags contains tag %}selected="selected"{% endif %} value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</option>
+        {% endfor %}
+      </select>
+    {% endif %}
+  </div>
+
+  
+  {% for article in blog.articles %}
+    <div class="sixteen columns article">
+      <div class="five columns alpha omega blog_meta">
+        <h6>
+          {{ article.published_at | date: "%B %d, %Y" }}
+        </h6>
+
+        {% if article.comments_enabled? %}
+          <p>
+            <a href="{{ article.url }}#comments" class="title" title="{{ article.title | escape }} Comments">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
+          </p>
+        {% endif %}
+
+        {% if settings.blog_tags %}
+          <p class="meta">
+            {% for tag in article.tags %}
+              <a href="{{ shop.url }}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} tagged {{ tag | escape }}" class="tag">{{ tag }} &rsaquo;</a>
+            {% endfor %}
+          </p>
+        {% endif %}
+
+        <hr />
+       
+        {% include "social-buttons" with "article" %}
+
+      </div>
+
+      <div class="ten columns alpha blog_content">
+        <h2><a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a></h2>
+          
+        {% if article.excerpt != blank %}
+          {{ article.excerpt }}
+        
+          <p class="continue_reading">
+            <a href="{{ article.url }}" title="{{ article.title | escape }}" class="action_button">Continue Reading &gt;</a>
+          </p>
+        {% else %}
+          {{ article.content }} 
+        {% endif %}        
+      </div>
+    </div>
+  {% endfor %}
+  
+  <div class="sixteen columns">
+    {% include 'pagination' %} 
+  </div>   
+  
+{% endpaginate %}
