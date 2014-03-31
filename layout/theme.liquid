@@ -180,131 +180,131 @@ _atrk_opts = { atrk_acct:"dSB5j1a8Dy00wX", domain:"onetreeplanted.org",dynamic: 
         
         <div class="two-thirds column nav omega">
           <div class="mobile_hidden mobile_menu_container">
-            <ul class="top_menu {% if settings.display_search_box %}search_nav{% endif %}">
-              {% if settings.header_social_icons %}
-                <li> 
-                  <ul class="social_icons">
-                    {% if settings.twitter_link != '' %}
-                      <li class="twitter"><a href="{{ settings.twitter_link }}" title="{{ shop.name }} on Twitter" rel="me" target="_blank"><span class="icon-twitter"></span></a></li>
-                    {% endif %}
-                    
-                    {% if settings.facebook_link != '' %}
-                      <li class="facebook"><a href="{{ settings.facebook_link }}" title="{{ shop.name }} on Facebook" rel="me" target="_blank"><span class="icon-facebook"></span></a></li>
-                    {% endif %}
-                    
-                    {% if settings.google_link != '' %}
-                      <li class="google"><a href="{{ settings.google_link }}" title="{{ shop.name }} on Google+" rel="publisher" target="_blank"><span class="icon-gplus"></span></a></li>
-                    {% endif %}
-                    
-                    {% if settings.youtube_link != '' %}
-                      <li class="youtube"><a href="{{ settings.youtube_link }}" title="{{ shop.name }} on YouTube" rel="me" target="_blank"><span class="icon-youtube"></span></a></li>
-                    {% endif %}
-
-                    {% if settings.vimeo_link != '' %}
-                      <li class="vimeo"><a href="{{ settings.vimeo_link }}" title="{{ shop.name }} on Vimeo" rel="me" target="_blank"><span class="icon-vimeo"></span></a></li>
-                    {% endif %}
-                    
-                    {% if settings.pinterest_link != '' %}
-                      <li class="pinterest"><a href="{{ settings.pinterest_link }}" title="{{ shop.name }} on Pinterest" rel="me" target="_blank"><span class="icon-pinterest"></span></a></li>  
-                    {% endif %}
-                    
-                    {% if settings.tumblr_link != '' %}
-                      <li class="tumblr"><a href="{{ settings.tumblr_link }}" title="{{ shop.name }} on Tumblr" rel="me" target="_blank"><span class="icon-tumblr"></span></a></li>  
-                    {% endif %}
-                    
-                    {% if settings.linkedin_link != '' %}
-                      <li class="linkedin"><a href="{{ settings.linkedin_link }}" title="{{ shop.name }} on LinkedIn" rel="me" target="_blank"><span class="icon-linkedin"></span></a></li>  
-                    {% endif %}
-                    
-                    {% if settings.flickr_link != '' %}
-                      <li class="flickr"><a href="{{ settings.flickr_link }}" title="{{ shop.name }} on Flickr" rel="me" target="_blank"><span class="icon-flickr"></span></a></li>  
-                    {% endif %}
-
-                    {% if settings.instagram_link != '' %}
-                      <li class="instagram"><a href="{{ settings.instagram_link }}" title="{{ shop.name }} on Instagram" rel="me" target="_blank"><span class="icon-instagram"></span></a></li>  
-                    {% endif %}
-                    
-                  </ul>
-                </li>
-              {% endif %}
-              {% if settings.top_bar_linklist != blank %}
-                {% for link in linklists[settings.top_bar_linklist].links %}
+              <ul class="top_menu {% if settings.display_search_box %}search_nav{% endif %}">
+                  {% if settings.header_social_icons %}
                   <li>
-                    <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+                      <ul class="social_icons">
+                          {% if settings.twitter_link != '' %}
+                          <li class="twitter"><a href="{{ settings.twitter_link }}" title="{{ shop.name }} on Twitter" rel="me" target="_blank"><span class="icon-twitter"></span></a></li>
+                          {% endif %}
+
+                          {% if settings.facebook_link != '' %}
+                          <li class="facebook"><a href="{{ settings.facebook_link }}" title="{{ shop.name }} on Facebook" rel="me" target="_blank"><span class="icon-facebook"></span></a></li>
+                          {% endif %}
+
+                          {% if settings.google_link != '' %}
+                          <li class="google"><a href="{{ settings.google_link }}" title="{{ shop.name }} on Google+" rel="publisher" target="_blank"><span class="icon-gplus"></span></a></li>
+                          {% endif %}
+
+                          {% if settings.youtube_link != '' %}
+                          <li class="youtube"><a href="{{ settings.youtube_link }}" title="{{ shop.name }} on YouTube" rel="me" target="_blank"><span class="icon-youtube"></span></a></li>
+                          {% endif %}
+
+                          {% if settings.vimeo_link != '' %}
+                          <li class="vimeo"><a href="{{ settings.vimeo_link }}" title="{{ shop.name }} on Vimeo" rel="me" target="_blank"><span class="icon-vimeo"></span></a></li>
+                          {% endif %}
+
+                          {% if settings.pinterest_link != '' %}
+                          <li class="pinterest"><a href="{{ settings.pinterest_link }}" title="{{ shop.name }} on Pinterest" rel="me" target="_blank"><span class="icon-pinterest"></span></a></li>
+                          {% endif %}
+
+                          {% if settings.tumblr_link != '' %}
+                          <li class="tumblr"><a href="{{ settings.tumblr_link }}" title="{{ shop.name }} on Tumblr" rel="me" target="_blank"><span class="icon-tumblr"></span></a></li>
+                          {% endif %}
+
+                          {% if settings.linkedin_link != '' %}
+                          <li class="linkedin"><a href="{{ settings.linkedin_link }}" title="{{ shop.name }} on LinkedIn" rel="me" target="_blank"><span class="icon-linkedin"></span></a></li>
+                          {% endif %}
+
+                          {% if settings.flickr_link != '' %}
+                          <li class="flickr"><a href="{{ settings.flickr_link }}" title="{{ shop.name }} on Flickr" rel="me" target="_blank"><span class="icon-flickr"></span></a></li>
+                          {% endif %}
+
+                          {% if settings.instagram_link != '' %}
+                          <li class="instagram"><a href="{{ settings.instagram_link }}" title="{{ shop.name }} on Instagram" rel="me" target="_blank"><span class="icon-instagram"></span></a></li>
+                          {% endif %}
+
+                      </ul>
                   </li>
-                {% endfor %}
-              {% endif %}
-             
-              
-              
-            <li>
-              <a href="/collections/plant-a-tree" title="Pick a Location & Plant a Tree" class="header_button" style="float: right; background: #479ccf; color: #ffffff; border: 0; padding: 10px 13px; margin:10px 0px; text-align: center; font-size: 13px; cursor: pointer;">Plant a Tree</a><a href="/collections/plant-a-tree" title="Plant a Tree with One Tree Planted!" class="header_button_orange" style="float: right; background: #ff6f00; color: #ffffff; border: 0; padding: 10px 13px; margin:10px 0px; text-align: center; font-size: 13px; margin-right: 10px; cursor: pointer;">Join our team</a>
-            </li><br>
-              
-              <!--{% if shop.customer_accounts_enabled %}
-                <li>
-                  <a href="/account" title="My Account {% if customer %}({{ customer.email }}){% endif %}">My Account</a>
-                </li>-->
-              
-              
-              
-                {% if customer %}
+                  {% endif %}
+                  {% if settings.top_bar_linklist != blank %}
+                  {% for link in linklists[settings.top_bar_linklist].links %}
                   <li>
-                    {{ "Logout" | customer_logout_link }}
+                      <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
                   </li>
-                {% endif %}
-              {% endif %}
-              {% if settings.show_multiple_currencies %}
-                <li>
-                  {% include 'currencies-switcher' %}
-                </li>
-              {% endif %}
-              {% if settings.display_search_box %}
-                <li>
-                  <form class="search" action="/search">
-                    {% if settings.search_option != "everything" %}
-                      <input type="hidden" name="type" value="product" />
-                    {% endif %}
-                    <input type="text" name="q" class="search_box" placeholder="Search..." value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" />
-                  </form>
-                </li>
-              {% endif %}
-            </ul>
-            <ul class="main menu">
-              {% for link in linklists[settings.main_linklist].links %}
-                {% if linklists[link.handle] == empty %}
+                  {% endfor %}
+                  {% endif %}
+
+
+
+                  <li>
+                      <a href="/collections/plant-a-tree" title="Pick a Location & Plant a Tree" class="header_button" style="float: right; background: #479ccf; color: #ffffff; border: 0; padding: 10px 13px; margin:10px 0px; text-align: center; font-size: 13px; cursor: pointer;">Plant a Tree</a><a href="/collections/plant-a-tree" title="Plant a Tree with One Tree Planted!" class="header_button_orange" style="float: right; background: #ff6f00; color: #ffffff; border: 0; padding: 10px 13px; margin:10px 0px; text-align: center; font-size: 13px; margin-right: 10px; cursor: pointer;">Join our team</a>
+                  </li><br>
+
+                  <!--{% if shop.customer_accounts_enabled %}
+                    <li>
+                      <a href="/account" title="My Account {% if customer %}({{ customer.email }}){% endif %}">My Account</a>
+                    </li>-->
+
+
+
+                  {% if customer %}
+                  <li>
+                      {{ "Logout" | customer_logout_link }}
+                  </li>
+                  {% endif %}
+                  {% endif %}
+                  {% if settings.show_multiple_currencies %}
+                  <li>
+                      {% include 'currencies-switcher' %}
+                  </li>
+                  {% endif %}
+                  {% if settings.display_search_box %}
+                  <li>
+                      <form class="search" action="/search">
+                          {% if settings.search_option != "everything" %}
+                          <input type="hidden" name="type" value="product" />
+                          {% endif %}
+                          <input type="text" name="q" class="search_box" placeholder="Search..." value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" />
+                      </form>
+                  </li>
+                  {% endif %}
+              </ul>
+              <ul class="nav_buttons menu">
+                  <li class="navicon_button">
+                      <a href="#" class="navicon" title="View Menu">Menu</a>
+                  </li>
+                  <li>
+                      <a href="/cart" class="cart {% if cart.item_count > 0 %}active{% endif %}" title="Shopping Cart">Cart{% if cart.item_count > 0 %}<span class="cart_count"> ({{ cart.item_count }})</span>{% endif %}</a>
+                  </li>
+              </ul>
+              <ul class="main menu">
+                  {% for link in linklists[settings.main_linklist].links %}
+                  {% if linklists[link.handle] == empty %}
                   <li><a href="{{ link.url }}" title="{{ link.title }}" {% if link.active %}class="active"{% endif %}>{{ link.title }}</a></li>
-                {% else %}
-                  <li><a href="{{ link.url }}" title="{{ link.title }}" {% if link.active %}class="active"{% endif %} {% for link in linklists[link.handle].links %}{% if link.active %}class="active"{% endif %}{% endfor %}>{{ link.title }} 
-                    <span class="arrow">▾</span></a> 
-                    <ul>
-                      {% for link in linklists[link.handle].links %}
-                        {% if linklists[link.handle] == empty %}
+                  {% else %}
+                  <li><a href="{{ link.url }}" title="{{ link.title }}" {% if link.active %}class="active"{% endif %} {% for link in linklists[link.handle].links %}{% if link.active %}class="active"{% endif %}{% endfor %}>{{ link.title }}
+                      <span class="arrow">▾</span></a>
+                      <ul>
+                          {% for link in linklists[link.handle].links %}
+                          {% if linklists[link.handle] == empty %}
                           <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
-                        {% else %}
-                        <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }} <span class="arrow"> ▸</span></a> 
-                          <ul>
-                            {% for link in linklists[link.handle].links %}                        
-                              <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
-                            {% endfor %}
-                          </ul>
-                        </li>
-                        {% endif %}
-                      {% endfor %}
-                    </ul>
+                          {% else %}
+                          <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }} <span class="arrow"> ▸</span></a>
+                              <ul>
+                                  {% for link in linklists[link.handle].links %}
+                                  <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
+                                  {% endfor %}
+                              </ul>
+                          </li>
+                          {% endif %}
+                          {% endfor %}
+                      </ul>
                   </li>
-                {% endif %}
-              {% endfor %}
-            </ul>
+                  {% endif %}
+                  {% endfor %}
+              </ul>
           </div>
-          <ul class="nav_buttons menu">
-            <li class="navicon_button">
-              <a href="#" class="navicon" title="View Menu">Menu</a>
-            </li>
-            <li>
-              <a href="/cart" class="cart {% if cart.item_count > 0 %}active{% endif %}" title="Shopping Cart">Cart{% if cart.item_count > 0 %}<span class="cart_count"> ({{ cart.item_count }})</span>{% endif %}</a>
-            </li>
-          </ul>
         </div>
 
         {% if settings.featured_content_page != blank %}
