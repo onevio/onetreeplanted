@@ -216,7 +216,7 @@
     
 
 {% if settings.blog_widget %}
-  <div class="{% if settings.twitter_widget != blank %}ten{% else %}sixteen{% endif %} columns">
+  <div id="home_articles" class="{% if settings.twitter_widget != blank %}ten{% else %}sixteen{% endif %} columns">
     <h4 class="title">
       <a href="{{ blogs[settings.blog_widget_select].url }}">{{ blogs[settings.blog_widget_select].title }}</a>
     </h4>
@@ -247,7 +247,7 @@
 {% if settings.twitter_widget != blank %}
   <div class="{% if settings.blog_widget %}five offset-by-one{% else %}sixteen{% endif %} columns">
       <h4 class="title"><a href="https://twitter.com/{{ settings.twitter_username }}" target="_blank">Tweets</a></h4>
-      <a class="twitter-timeline" href="https://twitter.com/{{ settings.twitter_username }}" data-widget-id="319998048782647298" data-screen-name="{{ settings.twitter_username }}" data-chrome="noheader nofooter noborders transparent" data-link-color="{{ settings.link_color }}" data-heading-style="color:{{ settings.link_color }};font-size:{{ settings.regular_font_size }}px;{% if settings.regular_typeface_method == "google_webfonts" %}font-family: {{ settings.regular_google_webfont_font | replace: '+', ' ' }};{% else %}font-family: {{ settings.regular_websafe_font | replace: '+', ' ' }};{% endif %}"></a>
+      <a class="twitter-timeline" height="760" href="https://twitter.com/{{ settings.twitter_username }}" data-widget-id="319998048782647298" data-screen-name="{{ settings.twitter_username }}" data-chrome="noheader nofooter noborders transparent" data-link-color="{{ settings.link_color }}" data-heading-style="color:{{ settings.link_color }};font-size:{{ settings.regular_font_size }}px;{% if settings.regular_typeface_method == "google_webfonts" %}font-family: {{ settings.regular_google_webfont_font | replace: '+', ' ' }};{% else %}font-family: {{ settings.regular_websafe_font | replace: '+', ' ' }};{% endif %}"></a>
       <script defer>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </div>
 {% endif %}

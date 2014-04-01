@@ -91,6 +91,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write("<script src='{{ "jquery.min.js" | asset_url }}'>\x3C/script>")</script>
     {{ 'app.js' | asset_url | script_tag }}
+    {{ 'script.js' | asset_url | script_tag }}
     {% if settings.product_slideshow_animation == 'zoom' %}{{ "cloudzoom.js" | asset_url | script_tag }}{% endif %}
     {{ 'option_selection.js' | shopify_asset_url | script_tag }}        
     {{ content_for_header }}
