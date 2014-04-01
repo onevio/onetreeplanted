@@ -181,6 +181,14 @@ _atrk_opts = { atrk_acct:"dSB5j1a8Dy00wX", domain:"onetreeplanted.org",dynamic: 
         
         <div class="two-thirds column nav omega">
           <div class="mobile_hidden mobile_menu_container">
+              <ul class="nav_buttons menu">
+                  <li class="navicon_button">
+                      <a href="#" class="navicon" title="View Menu">Menu</a>
+                  </li>
+                  <li>
+                      <a href="/cart" class="cart {% if cart.item_count > 0 %}active{% endif %}" title="Shopping Cart">Cart{% if cart.item_count > 0 %}<span class="cart_count"> ({{ cart.item_count }})</span>{% endif %}</a>
+                  </li>
+              </ul><!-- ./nav_buttons-->
               <ul class="top_menu {% if settings.display_search_box %}search_nav{% endif %}">
                   {% if settings.header_social_icons %}
                   <li>
@@ -272,15 +280,7 @@ _atrk_opts = { atrk_acct:"dSB5j1a8Dy00wX", domain:"onetreeplanted.org",dynamic: 
                       </form>
                   </li>
                   {% endif %}
-              </ul>
-              <ul class="nav_buttons menu">
-                  <li class="navicon_button">
-                      <a href="#" class="navicon" title="View Menu">Menu</a>
-                  </li>
-                  <li>
-                      <a href="/cart" class="cart {% if cart.item_count > 0 %}active{% endif %}" title="Shopping Cart">Cart{% if cart.item_count > 0 %}<span class="cart_count"> ({{ cart.item_count }})</span>{% endif %}</a>
-                  </li>
-              </ul>
+              </ul><!-- ./top_menu-->
               <ul class="main menu">
                   {% for link in linklists[settings.main_linklist].links %}
                   {% if linklists[link.handle] == empty %}
@@ -306,7 +306,7 @@ _atrk_opts = { atrk_acct:"dSB5j1a8Dy00wX", domain:"onetreeplanted.org",dynamic: 
                   </li>
                   {% endif %}
                   {% endfor %}
-              </ul>
+              </ul><!-- ./main menu-->
           </div>
         </div>
 
