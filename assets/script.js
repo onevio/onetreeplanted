@@ -36,21 +36,19 @@
 
         t.$twitter = t.$container.find(t.o.twitter);
         t.$leftCol = t.$container.find(t.o.leftCol);
-        t.$sections = t.$leftCol.find(t.o.sections);
+
 
         if(t.$leftCol.length) {
-            t.$sections.each(function(i, el){
-                height += $(el).height();
-            });
-        }
-        console.log('here');
-        console.log('twitter height: ', t.$twitter.height());
-        console.log('left col height: ', t.$leftCol.height());
-        console.log('height: ', height);
+            t.$sections = t.$leftCol.find(t.o.sections);
+            if (t.$sections.length && t.$twitter.length) {
+                t.$sections.each(function(i, el){
+                    height += $(el).height();
+                });
 
-        if (t.$twitter.length && t.$leftCol.length) {
-            t.$twitter.attr('height', height);
+                t.$twitter.attr('height', height);
+            }
         }
+
     };
 
     $(window).load(function () {
