@@ -126,7 +126,7 @@ _atrk_opts = { atrk_acct:"dSB5j1a8Dy00wX", domain:"onetreeplanted.org",dynamic: 
     <div class="headerBar">
         <div class="container">
           <div class="sixteen columns">
-            <a href="/collections/plant-a-tree" title="Pick a Location & Plant a Tree" class="header_button" style="float: right;">Plant a Tree</a><a href="/pages/classy" title="Plant a Tree with One Tree Planted!" class="header_button_orange" style="float: right; margin-right: 10px;">Start a campaign</a>
+            <a href="/collections/plant-a-tree" title="Pick a Location & Plant a Tree" class="header_button" style="float: right;">Plant a Tree</a><a href="/collections/plant-a-tree" title="Plant a Tree with One Tree Planted!" class="header_button_orange" style="float: right; margin-right: 10px;">Start a campaign</a>
           </div>
       	</div>
     </div>
@@ -245,7 +245,7 @@ _atrk_opts = { atrk_acct:"dSB5j1a8Dy00wX", domain:"onetreeplanted.org",dynamic: 
 
 
                   <li>
-                      <a href="/collections/plant-a-tree" title="Pick a Location & Plant a Tree" class="header_button" style="float: right; background: #479ccf; color: #ffffff; border: 0; padding: 10px 13px; margin:10px 0px; text-align: center; font-size: 13px; cursor: pointer;">Plant a Tree</a><a href="/pages/classy" title="Plant a Tree with One Tree Planted!" class="header_button_orange" style="float: right; background: #ff6f00; color: #ffffff; border: 0; padding: 10px 13px; margin:10px 0px; text-align: center; font-size: 13px; margin-right: 10px; cursor: pointer;">Start a campaign</a>
+                      <a href="/collections/plant-a-tree" title="Pick a Location & Plant a Tree" class="header_button" style="float: right; background: #479ccf; color: #ffffff; border: 0; padding: 10px 13px; margin:10px 0px; text-align: center; font-size: 13px; cursor: pointer;">Plant a Tree</a><a href="/collections/plant-a-tree" title="Plant a Tree with One Tree Planted!" class="header_button_orange" style="float: right; background: #ff6f00; color: #ffffff; border: 0; padding: 10px 13px; margin:10px 0px; text-align: center; font-size: 13px; margin-right: 10px; cursor: pointer;">Start a campaign</a>
                   </li>
 
                   <br>
@@ -317,7 +317,6 @@ _atrk_opts = { atrk_acct:"dSB5j1a8Dy00wX", domain:"onetreeplanted.org",dynamic: 
         {% endif %}
       </div>
     </div>
-    </div>
 
     <div class="toggle_menu nav">
       <ul class="mobile_menu">
@@ -374,15 +373,9 @@ _atrk_opts = { atrk_acct:"dSB5j1a8Dy00wX", domain:"onetreeplanted.org",dynamic: 
       
       <div class="fixed_header"></div>
 
-      {% unless template contains "index" and settings.slideshow_enabled %}
-        <div class="container main content"> 
-      {% endunless %}
 
-      {% if template contains 'list-collections' %}
-        {% include 'collection-listing' %}
-      {% else %}
-        {{ content_for_layout }}
-      {% endif %}
+    <div class="main content">
+            {{ content_for_layout }}
     </div> <!-- end container -->
 
     <div class="footer">
